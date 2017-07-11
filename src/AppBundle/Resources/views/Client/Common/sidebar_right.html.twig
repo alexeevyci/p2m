@@ -1,0 +1,101 @@
+<!-- LANGUAGE -->
+<div class="preview">
+    <div class ="preview_head">
+        <h4>
+            <i class="fa fa-language" aria-hidden="true"></i>
+            {% trans %} selecteaza limba {% endtrans %}
+        </h4>
+    </div>
+    <div class ="preview_body">
+        {% set lang = app.session.get('client_language') %}
+        <div class="radio">
+            <label>
+                <img src="img/flags/ro.png"></img>
+                <input type="radio" name="optradio" value="rom" {{ ((lang == "ro") ? "checked" : "") }}>
+                {% trans %} romana {% endtrans %}
+            </label>
+        </div>
+        <div class="radio">
+            <label>
+                <img src="img/flags/en.png"></img>
+                <input type="radio" name="optradio" value="rom" {{ ((lang == "en") ? "checked" : "") }}>
+                {% trans %} engleza {% endtrans %}
+            </label>
+        </div>
+    </div>
+</div>
+<!-- SEARCH -->
+<div class="preview">
+    <div class ="preview_head">
+        <h4>
+            <i class="fa fa-search" aria-hidden="true"></i>
+            {% trans %} cauta {% endtrans %}
+        </h4>
+    </div>
+    <div class ="preview_body">
+        <script>
+          (function() {
+            var cx = '004280416742280003535:sxfznxaaln4';
+            var gcse = document.createElement('script');
+            gcse.type = 'text/javascript';
+            gcse.async = true;
+            gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+              '//cse.google.com/cse.js?cx=' + cx;
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(gcse, s);
+          })();
+        </script>
+        <gcse:search></gcse:search>
+    </div>
+</div>
+<!-- SPONSORS -->
+<div class="preview">
+    <div class ="preview_head">
+        <h4>
+            <i class="fa fa-user-secret" aria-hidden="true"></i>
+            {% trans %} sponsori {% endtrans %}
+        </h4>
+    </div>
+    <div class ="preview_body sponsors">
+        <p class="sponsors_subtitle">
+            <img src="img/bullet.png"></img>
+            <b>{% trans %} Institutii publice {% endtrans %}</b>
+        </p>
+        <p class="sb_sponsor_img" id="cji" data-toggle="tooltip" title="<img width='80px' src='img/sponsors/consiliul_judetean_iasi.png'>">Consiliul Județean Iași</p>
+        <p class="sponsors_subtitle">
+            <img src="img/bullet.png"></img>
+            <b>{% trans %} Universitati {% endtrans %}</b>
+        </p>
+        <p class="sb_sponsor_img" id="ceu" data-toggle="tooltip" title="CEU">Central European University</p>
+        <p class="sb_sponsor_img" id="pchs" data-toggle="tooltip" title="<img width='180px' src='img/sponsors/ceu.jpg'>">Pasts, Center for Historical Studies, Central European University, Budapesta</p>
+        <p class="sponsors_subtitle">
+            <img src="img/bullet.png"></img>
+            <b>{% trans %} Fundatii {% endtrans %}</b>
+        </p>
+        <p class="sb_sponsor_img" id="kas" data-toggle="tooltip" title="<img width='100px' src='img/sponsors/konrad_adenauer.jpg'>">Konrad Adenauer Stiftung</p>
+        <p class="sponsors_subtitle">
+            <img src="img/bullet.png"></img>
+            <b>{% trans %} Intreprinderi economice {% endtrans %}</b>
+        </p>
+      <p class="sb_sponsor_img" id="pb" data-toggle="tooltip" title="<img width='180px' src='img/sponsors/price_bank.jpg'>">Price Banks (Tomești, Iași)</p>
+      <p class="sponsors_subtitle">
+        <img src="img/bullet.png"></img>
+        <b>{% trans %} Persoane fizice {% endtrans %}</b>
+      </p>
+      <p class="ident">
+        Dennis Deletant (Washington, DC)
+      </p>
+      <p class="ident">
+        Ilie Strahotin (Darabani / Pittsburgh, Pennsylvania)
+      </p>
+      <p class="ident">
+        Paul Michelson (Huntington, Indiana)
+      </p>
+      <p class="ident">
+        Jim O'Donnell (Huntington, Indiana)
+      </p>
+    </div>
+    <div class="reset-this" id="spansor_label">
+      <img src="img/sponsors/consiliul_judetean_iasi.png"></img>
+  </div>
+</div>

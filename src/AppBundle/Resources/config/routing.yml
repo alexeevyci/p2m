@@ -1,0 +1,21 @@
+homepage:
+    path:      /
+    defaults:  { _controller: AppBundle:Default:index }
+util_generate_menu:
+    path:      /utill/generate_menu
+    defaults:  { _controller: AppBundle:Util:generateMenu }
+used_machines:
+    path:      /used_machines
+    defaults:  { _controller: AppBundle:Default:usedMachines }
+sell_your_machines:
+    path:      /sell_your_machines
+    defaults:  { _controller: AppBundle:Default:sellYourMachines }
+sell_parts:
+    path:      /sell_parts
+    defaults:  { _controller: AppBundle:Default:sellParts }
+newsletter:
+    path:      /newsletter
+    defaults:  { _controller: AppBundle:Default:newsletter }
+contact:
+    path:      /contact
+    defaults:  { _controller: AppBundle:Default:contact }

@@ -1,0 +1,33 @@
+<div class="menu_container">
+    <nav class="navbar navbar-default">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="{{ path('homepage') }}">Home</a></li>
+                <li><a href="{{ path('used_machines') }}">Used machines</a></li>
+                <li><a href="{{ path('sell_your_machines') }}">Sell your machines</a></li>
+                <li><a href="{{ path('sell_parts') }}">Sell parts</a></li>
+                <li><a href="{{ path('newsletter') }}">Newsletter</a></li>
+                <li><a href="{{ path('contact') }}">Contact</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><img id="imgNavSel" src="" alt="..." class="img-thumbnail icon-small">  <span id="lanNavSel">ITA</span> <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a id="navEng" href="#" class="language"> <img id="imgNavEng" src="" alt="en" class="img-thumbnail icon-small">  <span id="lanNavEng">English</span></a></li>
+                        <li><a id="navDeu" href="#" class="language"> <img id="imgNavDeu" src="" alt="de" class="img-thumbnail icon-small">  <span id="lanNavDeu">Deutsch</span></a></li>
+                        <li><a id="navFre" href="#" class="language"><img id="imgNavFre" src="" alt="fr" class="img-thumbnail icon-small">  <span id="lanNavFre">French</span></a></li>
+                        <li><a id="navSpa" href="#" class="language"><img id="imgNavSpa" src="" alt="sp" class="img-thumbnail icon-small">  <span id="lanNavSpa">Spanish</span></a></li>
+                        <li><a id="navIta" href="#" class="language"><img id="imgNavIta" src="" alt="it" class="img-thumbnail icon-small">  <span id="lanNavIta">Italian</span></a></li>
+                        <li><a id="navRom" href="#" class="language"><img id="imgNavRom" src="" alt="ro" class="img-thumbnail icon-small">  <span id="lanNavRom">Romanian</span></a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>

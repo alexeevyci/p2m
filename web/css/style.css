@@ -1,0 +1,205 @@
+/*general*/
+input[type=radio] {
+  margin: 0; }
+
+input[type=radio]:focus {
+  outline: none; }
+
+input[type=checkbox]:focus {
+  outline: none; }
+
+/*logo*/
+body {
+  background-image: url("../../img/check_radio_sheet.png") 0 0; }
+
+div.header_div {
+    height: auto; 
+}
+div.header_div div.logo_grid {
+    height: 100px; 
+}
+div.header_div div.logo_grid img {
+    height: 100%;
+    max-width: 90%;
+    padding: 10px; 
+}
+
+/*contact details*/
+div.contact_details_grid {
+    height: 100px; 
+}
+div.contact_details {
+    height: 100%;
+    width: auto;
+    float: right;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-justify-content: center;
+}
+div.contact_item {
+    width: auto;
+    line-height: 22px;
+}
+div.contact_item a {
+    font-size: 16px;
+    text-decoration: none;
+}
+
+
+/*contact logo details*/
+div.contact_logo_details {
+    float: right;
+    justify-content: center;
+    height: 100%;
+    display: -webkit-flex;
+    flex-direction: column;
+    
+}
+
+div.contact_item {
+    /*align-items:center;
+    flex-direction: column;*/
+}
+
+/*back to top*/
+#back_to_top {
+    display: inline-block;
+    position: fixed;
+    width: 4%;
+    bottom: 0px;
+    right: 10px;
+    display: none; 
+}
+#back_to_top img {
+    width: 100%; 
+}
+
+/*menu*/
+div.menu_container nav.navbar div.navbar-collapse 
+{
+    text-align: left; 
+}
+div.menu_container nav.navbar div.navbar-collapse ul.navbar-nav 
+  {
+      color: #f00;
+      display: inline-block;
+      float: none;
+      vertical-align: top; 
+  }
+div.menu_container nav.navbar div.navbar-collapse ul.navbar-nav li {
+    font-size: 14px; 
+}
+div.menu_container nav.navbar div.navbar-collapse ul.navbar-nav li a {
+    font-weight: bold; 
+}
+ul.navbar-nav>li>a {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+@media (max-width: 1000px) {
+  ul.navbar-nav>li>a {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+/*main search*/
+#custom-search-input {
+  padding: 3px;
+  margin-top: 16px;
+  border: solid 1px #E4E4E4;
+  border-radius: 16px;
+  background-color: #fff; }
+  #custom-search-input input.form-control {
+    border: 0;
+    box-shadow: none;
+    height: 22px; }
+  #custom-search-input span.input-group-btn {
+    font-size: 14px; }
+    #custom-search-input span.input-group-btn button {
+      height: 16px;
+      margin: 2px 0 0 0;
+      background: none;
+      box-shadow: none;
+      border: 0;
+      color: #666666;
+      padding: 0 8px 0 10px;
+      border-left: solid 1px #ccc; }
+      #custom-search-input span.input-group-btn button i.glyphicon-search {
+        top: 0;
+        font-size: 16px; }
+
+
+
+/*cards*/
+div#products_grid div.card {
+  width: 100%;
+  margin-bottom: 30px; }
+  div#products_grid div.card img.card-img-top {
+    width: 100%;
+    padding: 5%; }
+  div#products_grid div.card div.card-block p.card-text {
+    text-align: justify; }
+
+/*swite radio and checkbox*/
+label.radio {
+  margin-left: 20px;
+  margin-top: 6px;
+  margin-bottom: 6px; }
+  label.radio input.swite_radio {
+    display: none;
+    -webkit-appearance: none;
+    background-color: #e1e1e1;
+    border: 4px solid #e1e1e1;
+    border-radius: 50px;
+    width: 100%;
+    display: inline-block;
+    position: relative;
+    width: 12px;
+    height: 12px; }
+    label.radio input.swite_radio:checked {
+      background: grey;
+      border: 2px solid #e1e1e1; }
+
+label.check {
+  display: block;
+  margin-top: 3px;
+  margin-bottom: 3px; }
+  label.check input.swite_check {
+    margin-right: 5px;
+    float: left;
+    display: none;
+    -webkit-appearance: none;
+    background-color: #e1e1e1;
+    border: 4px solid #e1e1e1;
+    border-radius: 2px;
+    width: 100%;
+    display: inline-block;
+    position: relative;
+    width: 12px;
+    height: 12px;
+    border: 1px solid grey; }
+    label.check input.swite_check:checked {
+      background: grey;
+      border: 2px solid #e1e1e1; }
+
+/*footer*/
+div.footer {
+  height: 40px;
+  line-height: 40px;
+  margin-top: 30px;
+  background-color: #e7e7e7;
+  vertical-align: middle; }
+  div.footer p {
+    margin: 0; }
