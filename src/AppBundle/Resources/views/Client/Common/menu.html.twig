@@ -7,6 +7,9 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
+            <div id="csi_mobile" class="custom-search-input">
+                {{ include('@AppBundle/Resources/views/Client/Common/Partial/search.html.twig') }}
+            </div>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
@@ -17,17 +20,20 @@
                 <li><a href="{{ path('newsletter') }}">Newsletter</a></li>
                 <li><a href="{{ path('contact') }}">Contact</a></li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><img id="imgNavSel" src="" alt="..." class="img-thumbnail icon-small">  <span id="lanNavSel">ITA</span> <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><img id="imgNavSet" src="img/flags/gb.svg" alt="en" class="icon_small">  <span id="lanNavSet">English</span> <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a id="navEng" href="#" class="language"> <img id="imgNavEng" src="" alt="en" class="img-thumbnail icon-small">  <span id="lanNavEng">English</span></a></li>
-                        <li><a id="navDeu" href="#" class="language"> <img id="imgNavDeu" src="" alt="de" class="img-thumbnail icon-small">  <span id="lanNavDeu">Deutsch</span></a></li>
-                        <li><a id="navFre" href="#" class="language"><img id="imgNavFre" src="" alt="fr" class="img-thumbnail icon-small">  <span id="lanNavFre">French</span></a></li>
-                        <li><a id="navSpa" href="#" class="language"><img id="imgNavSpa" src="" alt="sp" class="img-thumbnail icon-small">  <span id="lanNavSpa">Spanish</span></a></li>
-                        <li><a id="navIta" href="#" class="language"><img id="imgNavIta" src="" alt="it" class="img-thumbnail icon-small">  <span id="lanNavIta">Italian</span></a></li>
-                        <li><a id="navRom" href="#" class="language"><img id="imgNavRom" src="" alt="ro" class="img-thumbnail icon-small">  <span id="lanNavRom">Romanian</span></a></li>
+                        <li><a id="navEng" href="#" class="language"> <img id="imgNavEng" src="img/flags/gb.svg" alt="en" class="icon_small">  <span id="lanNavEng">English</span></a></li>
+                        <li><a id="navDeu" href="#" class="language"> <img id="imgNavDeu" src="img/flags/de.svg" alt="de" class="icon_small">  <span id="lanNavDeu">Deutsch</span></a></li>
+                        <li><a id="navFre" href="#" class="language"><img id="imgNavFre" src="img/flags/fr.svg" alt="fr" class="icon_small">  <span id="lanNavFre">French</span></a></li>
+                        <li><a id="navSpa" href="#" class="language"><img id="imgNavSpa" src="img/flags/es.svg" alt="sp" class="icon_small">  <span id="lanNavSpa">Spanish</span></a></li>
+                        <li><a id="navIta" href="#" class="language"><img id="imgNavIta" src="img/flags/it.svg" alt="it" class="icon_small">  <span id="lanNavIta">Italian</span></a></li>
+                        <li><a id="navRom" href="#" class="language"><img id="imgNavRom" src="img/flags/ro.svg" alt="ro" class="icon_small">  <span id="lanNavRom">Romanian</span></a></li>
                     </ul>
                 </li>
             </ul>
+            <div id="csi_screen" class="custom-search-input">
+                {{ include('@AppBundle/Resources/views/Client/Common/Partial/search.html.twig') }}
+            </div>
         </div>
     </nav>
 </div>
