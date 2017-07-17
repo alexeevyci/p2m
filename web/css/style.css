@@ -23,6 +23,11 @@ div.header_div div.logo_grid img {
     max-width: 90%;
     padding: 10px; 
 }
+@media (max-width: 400px) {
+    div.header_div div.logo_grid {
+        width: 100%; 
+    }
+}
 
 /*contact details*/
 div.contact_details_grid {
@@ -45,6 +50,15 @@ div.contact_item {
 div.contact_item a {
     font-size: 16px;
     text-decoration: none;
+}
+@media (max-width: 400px) {
+    div.contact_details_grid {
+        width: 100%; 
+        height: 50px;
+    }
+    div.contact_details {
+        float:left;
+    }
 }
 
 
@@ -196,26 +210,36 @@ div#csi_mobile {
     margin-right: 15px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
 /*cards*/
-div#products_grid div.card {
-  width: 100%;
-  margin-bottom: 30px; }
-  div#products_grid div.card img.card-img-top {
+div#products_grid div.card 
+{
     width: 100%;
-    padding: 5%; }
-  div#products_grid div.card div.card-block p.card-text {
-    text-align: justify; }
+    margin-bottom: 30px; 
+}
+div#products_grid div.card img.card-img-top 
+{
+    width: 100%;
+    padding: 5%; 
+}
+div#products_grid div.card div.card-block p.card-text 
+{
+    text-align: justify; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*swite radio and checkbox*/
 label.radio {
