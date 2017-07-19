@@ -8,6 +8,10 @@ input[type=radio]:focus {
 input[type=checkbox]:focus {
   outline: none; }
 
+h1, h2, h3, h4, h5, h6, p, a, span {
+  color: #333;
+}
+
 /*logo*/
 body {
   background-image: url("../../img/check_radio_sheet.png") 0 0; }
@@ -120,6 +124,21 @@ ul.navbar-nav>li>a {
 div#csi_mobile {
     display: none;
 }
+.navbar-default {
+    background-color: #0f0;
+}
+.dropdown-menu {
+    background-color: #0f0;
+}
+navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
+    background-color: #0f0;
+}
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
+    background-color: #0f0;
+}
+.dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {
+    background-color: #0f0;
+}
 @media (max-width: 1000px) {
   ul.navbar-nav>li>a {
     padding-left: 5px;
@@ -214,6 +233,9 @@ div#csi_mobile {
 div#csi_mobile {
     margin-right: 15px;
 }
+span.glyphicon {
+    color: #0f0;
+}
 
 /*cards*/
 div#products_grid div.card 
@@ -231,6 +253,15 @@ div#products_grid div.card div.card-block p.card-text
     text-align: justify; 
 }
 
+/*home text*/
+div.home_text_wrapper {
+  margin-bottom: 40px;
+}
+div.home_text_wrapper p {
+  text-align: justify;
+  text-indent: 30px;
+}
+
 /*homepage slider*/
 div.carousel_item img {
     width: 300px;
@@ -239,11 +270,36 @@ div.carousel_item img {
     margin:auto;
 }
 button.slick-prev.slick-arrow {
-    background-color: #f00;
+    background-color: #0f0;
 }
 button.slick-next.slick-arrow {
-    background-color: #f00;
+    background-color: #0f0;
 }
+.carousel_item a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+}
+a.carousel_item_code {
+    color: #0f0;
+}
+
+/*footer*/
+div.footer 
+{
+    height: 40px;
+    line-height: 40px;
+    margin-top: 30px;
+    background-color: #0f0;
+    vertical-align: middle; 
+}
+div.footer p {
+    margin: 0; 
+}
+
+
+
+
 
 
 
@@ -303,12 +359,3 @@ label.check {
       background: grey;
       border: 2px solid #e1e1e1; }
 
-/*footer*/
-div.footer {
-  height: 40px;
-  line-height: 40px;
-  margin-top: 30px;
-  background-color: #e7e7e7;
-  vertical-align: middle; }
-  div.footer p {
-    margin: 0; }
