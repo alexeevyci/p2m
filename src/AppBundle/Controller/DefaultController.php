@@ -36,9 +36,9 @@ class DefaultController extends Controller
         return $this->render('@AppBundle\Resources\views\Client\SellYourMachines\index.html.twig');
     }
 
-    public function sellPartsAction(Request $request)
+    public function sparePartsAction(Request $request)
     {
-        return $this->render('@AppBundle\Resources\views\Client\SellParts\index.html.twig');
+        return $this->render('@AppBundle\Resources\views\Client\SpareParts\index.html.twig');
     }
 
     public function newsletterAction(Request $request)

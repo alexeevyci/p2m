@@ -10,9 +10,9 @@ used_machines:
 sell_your_machines:
     path:      /sell_your_machines
     defaults:  { _controller: AppBundle:Default:sellYourMachines }
-sell_parts:
-    path:      /sell_parts
-    defaults:  { _controller: AppBundle:Default:sellParts }
+spare_parts:
+    path:      /spare_parts
+    defaults:  { _controller: AppBundle:Default:spareParts }
 newsletter:
     path:      /newsletter
     defaults:  { _controller: AppBundle:Default:newsletter }

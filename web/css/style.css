@@ -1,4 +1,8 @@
 /*general*/
+@font-face {
+    font-family: animeace;
+    src: url(../fonts/animeace.ttf);
+}
 input[type=radio] {
   margin: 0; }
 
@@ -9,7 +13,7 @@ input[type=checkbox]:focus {
   outline: none; }
 
 h1, h2, h3, h4, h5, h6, p, a, span {
-  color: #333;
+  color: #555;
 }
 
 /*logo*/
@@ -22,14 +26,37 @@ div.header_div {
 div.header_div div.logo_grid {
     height: 100px; 
 }
-div.header_div div.logo_grid img {
+div.logo_wrapper {
     height: 100%;
-    max-width: 90%;
-    padding: 10px; 
+    width: auto;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-justify-content: center;
 }
-@media (max-width: 400px) {
-    div.header_div div.logo_grid {
-        width: 100%; 
+div.logo_wrapper span {
+    font-family: animeace;
+    color:#0f0;
+}
+span.title {
+    font-size: 26px;
+}
+@media (max-width: 600px) {
+    span.title {
+        font-size: 22px;
+    }
+    span.subtitle {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 530px) {
+    span.title {
+        font-size: 20px;
+    }
+    span.subtitle {
+        font-size: 10px;
     }
 }
 
@@ -68,22 +95,6 @@ div.contact_item a {
     div.contact_details {
         float:left;
     }
-}
-
-
-/*contact logo details*/
-div.contact_logo_details {
-    float: right;
-    justify-content: center;
-    height: 100%;
-    display: -webkit-flex;
-    flex-direction: column;
-    
-}
-
-div.contact_item {
-    /*align-items:center;
-    flex-direction: column;*/
 }
 
 /*back to top*/
@@ -138,6 +149,9 @@ navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .
 }
 .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {
     background-color: #0f0;
+}
+.navbar-default .navbar-nav>li>a {
+    color: #555;
 }
 @media (max-width: 1000px) {
   ul.navbar-nav>li>a {
@@ -259,7 +273,6 @@ div.home_text_wrapper {
 }
 div.home_text_wrapper p {
   text-align: justify;
-  text-indent: 30px;
 }
 
 /*homepage slider*/
@@ -268,6 +281,8 @@ div.carousel_item img {
     height: 225px;
     display:block;
     margin:auto;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 button.slick-prev.slick-arrow {
     background-color: #0f0;
@@ -283,6 +298,23 @@ button.slick-next.slick-arrow {
 a.carousel_item_code {
     color: #0f0;
 }
+.slick-dotted.slick-slider {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+@media (max-width: 991px) {
+    div.carousel_item img {
+        width: 220px;
+        height: 165px;
+    }
+}
+@media (max-width: 700px) {
+    div.carousel_item img {
+        width: 200px;
+        height: 150px;
+    }
+}
+
 
 /*footer*/
 div.footer 
