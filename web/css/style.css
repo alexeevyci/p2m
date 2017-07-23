@@ -3,6 +3,16 @@
     font-family: animeace;
     src: url(../fonts/animeace.ttf);
 }
+html, body {
+  margin: 0px;
+  padding: 0px;
+  min-height: 100%;
+  height: 100%;
+}
+div.wrapper {
+  min-height: 85%;
+  height: auto;
+}
 input[type=radio] {
   margin: 0; }
 
@@ -10,16 +20,20 @@ input[type=radio]:focus {
   outline: none; }
 
 input[type=checkbox]:focus {
-  outline: none; }
-
+  outline: none; 
+}
 h1, h2, h3, h4, h5, h6, p, a, span {
   color: #555;
 }
+a, a:hover, a:focus {
+    text-decoration: none;
+    color: #555;
+}
+.mrg_top_10 {
+    margin-top: 10px;
+}
 
 /*logo*/
-body {
-  background-image: url("../../img/check_radio_sheet.png") 0 0; }
-
 div.header_div {
     height: auto; 
 }
@@ -317,17 +331,31 @@ a.carousel_item_code {
 
 
 /*footer*/
-div.footer 
-{
-    height: 40px;
-    line-height: 40px;
-    margin-top: 30px;
+div.wrapper_footer {
     background-color: #0f0;
-    vertical-align: middle; 
+    margin-top: 30px;
 }
-div.footer p {
-    margin: 0; 
+h5.title {
+    border-bottom: 1px solid #555;
+    padding-top: 10px;
+    padding-bottom: 14px;
 }
+div.textwidget p {
+    margin-bottom: 0px;
+}
+div.go_to a {
+    display: block;
+    border-bottom: 1px solid #555;
+    padding-top: 9px;
+    padding-bottom: 5px;
+}
+div.go_to a:first-child {
+    display: block;
+    border-bottom: 1px solid #555;
+    padding-top: 0px;
+    padding-bottom: 5px;
+}
+
 
 
 
