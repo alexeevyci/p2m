@@ -6,6 +6,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Form\ProductsFiltersType;
+use AppBundle\Form\NewsletterType;
 
 class DefaultController extends Controller
 {
@@ -13,8 +14,8 @@ class DefaultController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $products = $em->getRepository('AppBundle:Products')->getProducts();
-        // $filtersForm = $this->createForm(ProductsFiltersType::class, null);
-        // $filtersForm->handleRequest($request);
+        $newsletterForm = $this->createForm(NewsletterType::class, null);
+        $newsletterForm->handleRequest($request);
         // if ($filtersForm->isValid()) {
         //     $formData = $filtersForm->getData();
         //     // $em->persist($formData);
@@ -22,7 +23,8 @@ class DefaultController extends Controller
         //     // $this->addFlash('success', 'Note Saved');
         // }
         return $this->render('@AppBundle\Resources\views\Client\Home\index.html.twig', array(
-            'products' => $products
+            'products' => $products,
+            'newsletterForm' => $newsletterForm->createView()
         ));
     }
 

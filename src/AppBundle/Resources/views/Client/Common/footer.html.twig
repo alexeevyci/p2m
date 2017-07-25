@@ -1,10 +1,22 @@
 <div class="container wrapper_footer">
 	<div class="row">
 	    <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
-	    	<h5 class="text-center title">NEWSLETTER SIGNUP</h5>
-	        <p>Copyright © 2018, Shop Online</p>
-	        <p>Copyright © 2018, Shop Online</p>
-	        <p>Copyright © 2018, Shop Online</p>
+	    	<h5 class="text-center title">NEWSLETTER SUBSCIBE</h5>
+	        <div class="subscribe">
+	        	{{ form_start(newsletterForm) }}
+	        	<div class="form-group">
+				    {{ form_widget(newsletterForm.name, { 'attr': {'class': 'form-control', 'placeholder': newsletterForm.name.vars.label}}) }}
+				    {{ form_errors(newsletterForm.name) }}
+			    </div>
+			    <div class="form-group">
+				    {{ form_widget(newsletterForm.email, { 'attr': {'class': 'form-control', 'placeholder': newsletterForm.email.vars.label}}) }}
+				    {{ form_errors(newsletterForm.email) }}
+			    </div>
+			    <div class="form-group">
+				    {{ form_widget(newsletterForm.subscribe, { 'attr': {'class': 'btn my_primary_btn'}}) }}
+			    </div>
+				{{ form_end(newsletterForm) }}
+	        </div>
 	    </div>
 	    <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
 	    	<h5 class="text-center title">GO TO</h5>

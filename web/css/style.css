@@ -32,6 +32,15 @@ a, a:hover, a:focus {
 .mrg_top_10 {
     margin-top: 10px;
 }
+button.my_primary_btn {
+    background-color: #555;
+    color: #fff;
+}
+button.my_primary_btn:hover {
+    background-color: #666;
+    color: #fff;
+}
+
 
 /*logo*/
 div.header_div {

@@ -1,64 +1,17 @@
-{% extends "@AppBundle/Resources/views/Client/layout.html.twig" %}
-
-{% block body %}
-<div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 home_text_wrapper">
-    	<h4>Welcome to Pointing2Machines.</h4> 
-		<p>Are you interested in <b>selling or buying any used printing & converting machinery for the paper, printing and flexible packaging industries</b>? If so, you are in the right place.</p>
-		<p><b>Would you like to sell any machine machine</b>? Please let us have all the technical details of the machine you are willing to sell. We will take care in promoting it, organizing visits and making sure that you will get the best price possible.</p>
-		<p><b>Would you like to buy a machine</b>? Please let us have more informations on the machine you are looking for and on the product you would like to produce. We will do our best in finding the machine that meets your needs.</p>
-		<p>Dismantling, transport, installation and start up can be quoted upon request.</p>
-		<p>We are working on offering you the best services! </p>
-		<p>If you would like to receive our <b>newsletter</b> and never loose a good offer please subscribe!</p>
+<!DOCTYPE html>
+<html>
+<head>
+    {{ include('@AppBundle/Resources/views/Client/Common/head.html.twig') }}
+</head>
+<body>
+    <div class="wrapper container">
+        {{ include('@AppBundle/Resources/views/Client/Common/header.html.twig') }}
+        {{ include('@AppBundle/Resources/views/Client/Common/menu.html.twig') }}
+        {{ include('@AppBundle/Resources/views/Client/Home/content.html.twig') }}
+        <div id="push"></div>
     </div>
-</div>
-<div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-		{% set noProductImage = "img/no_product_image.png" %}
-    	<div class="last_product_carousel">
-		  	<div class="carousel_item">
-		  		<a href="#">
-		  			<img src="img/products/machine_1.jpg" alt="machine_1.jpg">
-		  		</a>
-		  		<a href="#">F&K gearless CI printing press</a>
-		  		<a href="#" class="carousel_item_code">F17007</a>
-		  	</div>
-		  	<div class="carousel_item">
-		  		<a href="#">
-		  			<img src="img/products/machine_2.jpg" alt="machine_1.jpg">
-		  		</a>
-		  		<a href="#">F&K gearless CI printing press</a>
-		  		<a href="#" class="carousel_item_code">F17007</a>
-		  	</div>
-		  	<div class="carousel_item">
-		  		<a href="#">
-		  			<img src="img/products/machine_3.jpg" alt="machine_1.jpg">
-		  		</a>
-		  		<a href="#">F&K gearless CI printing press</a>
-		  		<a href="#" class="carousel_item_code">F17007</a>
-		  	</div>
-		  	<div class="carousel_item">
-		  		<a href="#">
-		  			<img src="img/products/machine_4.jpg" alt="machine_1.jpg">
-		  		</a>
-		  		<a href="#">F&K gearless CI printing press</a>
-		  		<a href="#" class="carousel_item_code">F17007</a>
-		  	</div>
-		  	<div class="carousel_item">
-		  		<a href="#">
-		  			<img src="img/products/machine_5.jpg" alt="machine_1.jpg">
-		  		</a>
-		  		<a href="#">F&K gearless CI printing press</a>
-		  		<a href="#" class="carousel_item_code">F17007</a>
-		  	</div>
-		  	<div class="carousel_item">
-		  		<a href="#">
-		  			<img src="img/products/machine_6.jpg" alt="machine_1.jpg">
-		  		</a>
-		  		<a href="#">F&K gearless CI printing press</a>
-		  		<a href="#" class="carousel_item_code">F17007</a>
-		  	</div>
-		</div>
-    </div>
-</div>
-{% endblock %}
+    {{ include('@AppBundle/Resources/views/Client/Common/footer.html.twig') }}
+    {{ include('@AppBundle/Resources/views/Client/Common/back_to_top.html.twig') }}
+</body>
+{{ include('@AppBundle/Resources/views/Client/Common/include_scripts.html.twig') }}
+</html>
