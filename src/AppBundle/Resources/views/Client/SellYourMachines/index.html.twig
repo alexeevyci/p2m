@@ -1,12 +1,17 @@
-{% extends "@AppBundle/Resources/views/Client/layout.html.twig" %}
-
-{% block body %}
-
-	<h1>Sell Your Machines page</h1>
-	<h2>Sell Your Machines page</h2>
-	<h3>Sell Your Machines page</h3>
-	<h4>Sell Your Machines page</h4>
-	<h5>Sell Your Machines page</h5>
-	<h6>Sell Your Machines page</h6>
-
-{% endblock %}
+<!DOCTYPE html>
+<html>
+<head>
+    {{ include('@AppBundle/Resources/views/Client/Common/head.html.twig') }}
+</head>
+<body>
+    <div class="wrapper container">
+        {{ include('@AppBundle/Resources/views/Client/Common/header.html.twig') }}
+        {{ include('@AppBundle/Resources/views/Client/Common/menu.html.twig') }}
+        {{ include('@AppBundle/Resources/views/Client/SellYourMachines/content.html.twig') }}
+        <div id="push"></div>
+    </div>
+    {{ include('@AppBundle/Resources/views/Client/Common/footer.html.twig') }}
+    {{ include('@AppBundle/Resources/views/Client/Common/back_to_top.html.twig') }}
+</body>
+{{ include('@AppBundle/Resources/views/Client/Common/include_scripts.html.twig') }}
+</html>

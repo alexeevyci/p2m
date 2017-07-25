@@ -13,12 +13,36 @@
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li><a href="{{ path('homepage') }}">Home</a></li>
-                <li><a href="{{ path('used_machines') }}">Used machines</a></li>
-                <li><a href="{{ path('sell_your_machines') }}">Sell your machines</a></li>
-                <li><a href="{{ path('spare_parts') }}">Spare parts</a></li>
-                <li><a href="{{ path('newsletter') }}">Newsletter</a></li>
-                <li><a href="{{ path('contact') }}">Contact</a></li>
+                {% set menu_link_class="" %}
+                {% if app.request.attributes.get('_route') == 'homepage' %}
+                    {% set menu_link_class="active" %}
+                {% endif %}
+                <li><a href="{{ path('homepage') }}" class="{{menu_link_class}}">Home</a></li>
+                {% set menu_link_class="" %}
+                {% if app.request.attributes.get('_route') == 'used_machines' %}
+                    {% set menu_link_class="active" %}
+                {% endif %}
+                <li><a href="{{ path('used_machines') }}" class="{{menu_link_class}}">Used machines</a></li>
+                {% set menu_link_class="" %}
+                {% if app.request.attributes.get('_route') == 'sell_your_machines' %}
+                    {% set menu_link_class="active" %}
+                {% endif %}
+                <li><a href="{{ path('sell_your_machines') }}" class="{{menu_link_class}}">Sell your machines</a></li>
+                {% set menu_link_class="" %}
+                {% if app.request.attributes.get('_route') == 'spare_parts' %}
+                    {% set menu_link_class="active" %}
+                {% endif %}
+                <li><a href="{{ path('spare_parts') }}" class="{{menu_link_class}}">Spare parts</a></li>
+                {% set menu_link_class="" %}
+                {% if app.request.attributes.get('_route') == 'newsletter' %}
+                    {% set menu_link_class="active" %}
+                {% endif %}
+                <li><a href="{{ path('newsletter') }}" class="{{menu_link_class}}">Newsletter</a></li>
+                {% set menu_link_class="" %}
+                {% if app.request.attributes.get('_route') == 'contact' %}
+                    {% set menu_link_class="active" %}
+                {% endif %}
+                <li><a href="{{ path('contact') }}" class="{{menu_link_class}}">Contact</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><img id="imgNavSet" src="img/flags/gb.svg" alt="en" class="icon_small">  <span id="lanNavSet">English</span> <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">

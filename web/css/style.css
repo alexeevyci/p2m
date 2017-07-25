@@ -148,6 +148,9 @@ div.menu_container nav.navbar div.navbar-collapse ul.navbar-nav
 div.menu_container nav.navbar div.navbar-collapse ul.navbar-nav li {
     font-size: 14px; 
 }
+ul.navbar-nav>li {
+    margin-left: 15px;
+}
 div.menu_container nav.navbar div.navbar-collapse ul.navbar-nav li a {
     font-weight: bold; 
 }
@@ -164,11 +167,11 @@ div#csi_mobile {
 .dropdown-menu {
     background-color: #0f0;
 }
-navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
-    background-color: #0f0;
-}
 .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
     background-color: #0f0;
+}
+.navbar-default .navbar-nav>li>a:hover {
+    background-color: #32CD32;
 }
 .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {
     background-color: #0f0;
@@ -176,13 +179,19 @@ navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .
 .navbar-default .navbar-nav>li>a {
     color: #555;
 }
+a.active {
+    background-color: #32CD32;
+}
+ul.dropdown-menu a.language:hover{
+    background-color: #32CD32;
+}
 @media (max-width: 1000px) {
   ul.navbar-nav>li>a {
     padding-left: 5px;
     padding-right: 5px;
   }
 }
-@media (max-width: 991px) {
+@media (max-width: 950px) {
     .navbar-header {
         float: none;
     }

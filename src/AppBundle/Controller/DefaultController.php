@@ -30,27 +30,47 @@ class DefaultController extends Controller
 
     public function usedMachinesAction(Request $request)
     {
-        return $this->render('@AppBundle\Resources\views\Client\UsedMachines\index.html.twig');
+        $newsletterForm = $this->createForm(NewsletterType::class, null);
+        $newsletterForm->handleRequest($request);
+        return $this->render('@AppBundle\Resources\views\Client\UsedMachines\index.html.twig', array(
+            'newsletterForm' => $newsletterForm->createView()
+        ));
     }
 
     public function sellYourMachinesAction(Request $request)
     {
-        return $this->render('@AppBundle\Resources\views\Client\SellYourMachines\index.html.twig');
+        $newsletterForm = $this->createForm(NewsletterType::class, null);
+        $newsletterForm->handleRequest($request);
+        return $this->render('@AppBundle\Resources\views\Client\SellYourMachines\index.html.twig', array(
+            'newsletterForm' => $newsletterForm->createView()
+        ));
     }
 
     public function sparePartsAction(Request $request)
     {
-        return $this->render('@AppBundle\Resources\views\Client\SpareParts\index.html.twig');
+        $newsletterForm = $this->createForm(NewsletterType::class, null);
+        $newsletterForm->handleRequest($request);
+        return $this->render('@AppBundle\Resources\views\Client\SpareParts\index.html.twig', array(
+            'newsletterForm' => $newsletterForm->createView()
+        ));
     }
 
     public function newsletterAction(Request $request)
     {
-        return $this->render('@AppBundle\Resources\views\Client\Newsletter\index.html.twig');
+        $newsletterForm = $this->createForm(NewsletterType::class, null);
+        $newsletterForm->handleRequest($request);
+        return $this->render('@AppBundle\Resources\views\Client\Newsletter\index.html.twig', array(
+            'newsletterForm' => $newsletterForm->createView()
+        ));
     }
 
     public function contactAction(Request $request)
     {
-        return $this->render('@AppBundle\Resources\views\Client\Contact\index.html.twig');
+        $newsletterForm = $this->createForm(NewsletterType::class, null);
+        $newsletterForm->handleRequest($request);
+        return $this->render('@AppBundle\Resources\views\Client\Contact\index.html.twig', array(
+            'newsletterForm' => $newsletterForm->createView()
+        ));
     }
 }
 
