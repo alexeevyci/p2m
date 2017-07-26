@@ -12,6 +12,9 @@
 				    {{ form_widget(newsletterForm.email, { 'attr': {'class': 'form-control', 'placeholder': newsletterForm.email.vars.label}}) }}
 				    {{ form_errors(newsletterForm.email) }}
 			    </div>
+			    <div class="form-group">
+			    	<div class="g-recaptcha" data-sitekey="6LcthyoUAAAAADMuvPuy17kfoDB8v3u7BAYA7bd4"></div>
+			    </div>
 			    <div class="form-group text-center">
 				    {{ form_widget(newsletterForm.subscribe, { 'attr': {'class': 'btn my_primary_btn'}}) }}
 			    </div>
