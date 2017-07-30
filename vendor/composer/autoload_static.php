@@ -9,6 +9,7 @@ class ComposerStaticInit3f385dd532662e8127af729d6932b025
     public static $files = array (
         '92c8763cd6170fce6fcfe7e26b4e8c10' => __DIR__ . '/..' . '/symfony/phpunit-bridge/bootstrap.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
+        'ad155f8f1cf0d418fe49e248db8c661b' => __DIR__ . '/..' . '/react/promise/src/functions_include.php',
         '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
         '023d27dca8066ef29e6739335ea73bad' => __DIR__ . '/..' . '/symfony/polyfill-php70/bootstrap.php',
         'bd9634f2d41831496de0d3dfe4c94881' => __DIR__ . '/..' . '/symfony/polyfill-php56/bootstrap.php',
@@ -21,6 +22,7 @@ class ComposerStaticInit3f385dd532662e8127af729d6932b025
     public static $prefixLengthsPsr4 = array (
         'T' => 
         array (
+            'Twig\\' => 5,
             'Tests\\' => 6,
         ),
         'S' => 
@@ -43,6 +45,10 @@ class ComposerStaticInit3f385dd532662e8127af729d6932b025
             'Sensio\\Bundle\\FrameworkExtraBundle\\' => 35,
             'Sensio\\Bundle\\DistributionBundle\\' => 33,
         ),
+        'R' => 
+        array (
+            'React\\Promise\\' => 14,
+        ),
         'P' => 
         array (
             'Psr\\SimpleCache\\' => 16,
@@ -51,6 +57,10 @@ class ComposerStaticInit3f385dd532662e8127af729d6932b025
             'Psr\\Container\\' => 14,
             'Psr\\Cache\\' => 10,
         ),
+        'N' => 
+        array (
+            'Nietonfir\\Google\\ReCaptcha\\' => 27,
+        ),
         'M' => 
         array (
             'Monolog\\' => 8,
@@ -58,6 +68,12 @@ class ComposerStaticInit3f385dd532662e8127af729d6932b025
         'I' => 
         array (
             'Incenteev\\ParameterHandler\\' => 27,
+        ),
+        'G' => 
+        array (
+            'GuzzleHttp\\Stream\\' => 18,
+            'GuzzleHttp\\Ring\\' => 16,
+            'GuzzleHttp\\' => 11,
         ),
         'F' => 
         array (
@@ -78,6 +94,10 @@ class ComposerStaticInit3f385dd532662e8127af729d6932b025
     );
 
     public static $prefixDirsPsr4 = array (
+        'Twig\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/twig/twig/src',
+        ),
         'Tests\\' => 
         array (
             0 => __DIR__ . '/../..' . '/tests',
@@ -150,6 +170,10 @@ class ComposerStaticInit3f385dd532662e8127af729d6932b025
         array (
             0 => __DIR__ . '/..' . '/sensio/distribution-bundle',
         ),
+        'React\\Promise\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/react/promise/src',
+        ),
         'Psr\\SimpleCache\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/simple-cache/src',
@@ -170,6 +194,10 @@ class ComposerStaticInit3f385dd532662e8127af729d6932b025
         array (
             0 => __DIR__ . '/..' . '/psr/cache/src',
         ),
+        'Nietonfir\\Google\\ReCaptcha\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/nietonfir/google-recaptcha/src',
+        ),
         'Monolog\\' => 
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
@@ -177,6 +205,18 @@ class ComposerStaticInit3f385dd532662e8127af729d6932b025
         'Incenteev\\ParameterHandler\\' => 
         array (
             0 => __DIR__ . '/..' . '/incenteev/composer-parameter-handler',
+        ),
+        'GuzzleHttp\\Stream\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/guzzlehttp/streams/src',
+        ),
+        'GuzzleHttp\\Ring\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/guzzlehttp/ringphp/src',
+        ),
+        'GuzzleHttp\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/guzzlehttp/guzzle/src',
         ),
         'Fig\\Link\\' => 
         array (
