@@ -23,17 +23,17 @@ input[type=checkbox]:focus {
   outline: none; 
 }
 h1, h2, h3, h4, h5, h6, p, a, span {
-  color: #555;
+  color: #808080;
 }
 a, a:hover, a:focus {
     text-decoration: none;
-    color: #555;
+    color: #808080;
 }
 .mrg_top_10 {
     margin-top: 10px;
 }
 button.my_primary_btn {
-    background-color: #555;
+    background-color: #808080;
     color: #fff;
 }
 button.my_primary_btn:hover {
@@ -60,7 +60,7 @@ div.logo_wrapper {
 }
 div.logo_wrapper span {
     font-family: animeace;
-    color:#0f0;
+    color:#808080;
 }
 span.title {
     font-size: 26px;
@@ -162,28 +162,28 @@ div#csi_mobile {
     display: none;
 }
 .navbar-default {
-    background-color: #0f0;
+    background-color: #32CD32;
 }
 .dropdown-menu {
-    background-color: #0f0;
+    background-color: #32CD32;
 }
 .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
-    background-color: #0f0;
+    background-color: #32CD32;
 }
 .navbar-default .navbar-nav>li>a:hover {
-    background-color: #32CD32;
+    background-color: #6B8E23;
 }
 .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {
-    background-color: #0f0;
+    background-color: #32CD32;
 }
 .navbar-default .navbar-nav>li>a {
-    color: #555;
+    color: #808080;
 }
 a.active {
-    background-color: #32CD32;
+    background-color: #6B8E23;
 }
 ul.dropdown-menu a.language:hover{
-    background-color: #32CD32;
+    background-color: #6B8E23;
 }
 @media (max-width: 1000px) {
   ul.navbar-nav>li>a {
@@ -280,7 +280,7 @@ div#csi_mobile {
     margin-right: 15px;
 }
 span.glyphicon {
-    color: #0f0;
+    color: #32CD32;
 }
 
 /*cards*/
@@ -317,10 +317,10 @@ div.carousel_item img {
     padding-right: 10px;
 }
 button.slick-prev.slick-arrow {
-    background-color: #0f0;
+    background-color: #32CD32;
 }
 button.slick-next.slick-arrow {
-    background-color: #0f0;
+    background-color: #32CD32;
 }
 .carousel_item a {
     display: block;
@@ -328,7 +328,7 @@ button.slick-next.slick-arrow {
     text-decoration: none;
 }
 a.carousel_item_code {
-    color: #0f0;
+    color: #32CD32;
 }
 .slick-dotted.slick-slider {
     margin-left: 20px;
@@ -350,11 +350,11 @@ a.carousel_item_code {
 
 /*footer*/
 div.wrapper_footer {
-    background-color: #0f0;
+    background-color: #32CD32;
     margin-top: 30px;
 }
 h5.title {
-    border-bottom: 1px solid #555;
+    border-bottom: 1px solid #808080;
     padding-top: 10px;
     padding-bottom: 14px;
 }
@@ -363,13 +363,13 @@ div.textwidget p {
 }
 div.go_to a {
     display: block;
-    border-bottom: 1px solid #555;
+    border-bottom: 1px solid #808080;
     padding-top: 9px;
     padding-bottom: 5px;
 }
 div.go_to a:first-child {
     display: block;
-    border-bottom: 1px solid #555;
+    border-bottom: 1px solid #808080;
     padding-top: 0px;
     padding-bottom: 5px;
 }
