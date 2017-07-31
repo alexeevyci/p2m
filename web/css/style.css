@@ -60,10 +60,13 @@ div.logo_wrapper {
 }
 div.logo_wrapper span {
     font-family: animeace;
-    color:#808080;
 }
-span.title {
+div.logo_wrapper span.title {
     font-size: 26px;
+    color:#32CD32;
+}
+div.logo_wrapper span.subtitle {
+    color: #808080;
 }
 @media (max-width: 600px) {
     span.title {
@@ -148,10 +151,9 @@ div.menu_container nav.navbar div.navbar-collapse ul.navbar-nav
 div.menu_container nav.navbar div.navbar-collapse ul.navbar-nav li {
     font-size: 14px; 
 }
-ul.navbar-nav>li {
-    margin-left: 15px;
-}
+/*.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover*/
 div.menu_container nav.navbar div.navbar-collapse ul.navbar-nav li a {
+    color: #808080;
     font-weight: bold; 
 }
 ul.navbar-nav>li>a {
@@ -191,7 +193,7 @@ ul.dropdown-menu a.language:hover{
     padding-right: 5px;
   }
 }
-@media (max-width: 950px) {
+@media (max-width: 991px) {
     .navbar-header {
         float: none;
     }
@@ -236,6 +238,12 @@ ul.dropdown-menu a.language:hover{
     }
     div#csi_screen {
         display: none;
+    }
+    ul.navbar-nav>li {
+        margin-left: 15px;
+    }
+    .navbar-default .navbar-toggle, .navbar-default .navbar-toggle:hover {
+        background-color: #fff;
     }
 }
 
@@ -282,6 +290,25 @@ div#csi_mobile {
 span.glyphicon {
     color: #32CD32;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*cards*/
 div#products_grid div.card 
@@ -334,6 +361,14 @@ a.carousel_item_code {
     margin-left: 20px;
     margin-right: 20px;
 }
+.slick-dots li button:before {
+    color: #32CD32;
+    opacity: 1;
+}
+.slick-dots li.slick-active button:before {
+    color: #6B8E23;
+}
+
 @media (max-width: 991px) {
     div.carousel_item img {
         width: 220px;
@@ -346,7 +381,6 @@ a.carousel_item_code {
         height: 150px;
     }
 }
-
 
 /*footer*/
 div.wrapper_footer {
@@ -373,7 +407,10 @@ div.go_to a:first-child {
     padding-top: 0px;
     padding-bottom: 5px;
 }
-.g-recaptcha{
+#grecaptcha_wrapper {
+    width: 100%;
+}
+/*.g-recaptcha{
     -moz-transform:scale(1.2);
     -ms-transform:scale(1.2); 
     -o-transform:scale(1.2); 
@@ -386,7 +423,10 @@ div.go_to a:first-child {
     transform-origin:0;
     margin-top: 20px;
 }
-
+*/
+/*rc-anchor-normal {
+    height: 74px;
+    width: 60%;}*/
 
 
 

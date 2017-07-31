@@ -1,4 +1,6 @@
 $(document).ready(function() {
+
+	// homepahe slider
  	 $('.last_product_carousel').slick({
  	 	infinite: true,
 		slidesToShow: 3,
@@ -25,4 +27,14 @@ $(document).ready(function() {
 		    }
   		]
 	});
+
+ 	// google recaptcha responsive
+ 	var reCaptchaWidth = 304;
+ 	var container = $('#grecaptcha_wrapper').width();
+ 	if(reCaptchaWidth > containerWidth) {
+    	var captchaScale = containerWidth / reCaptchaWidth;
+	    $('.g-recaptcha').css({
+	      'transform':'scale('+captchaScale+')'
+	    });
+	}
 });
