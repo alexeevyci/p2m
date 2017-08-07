@@ -3,7 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use AppBundle\Entity\Products;
+use AppBundle\Entity\Subcategories;
 
 /**
  * Categories
@@ -44,16 +44,15 @@ class Categories
     private $updateAt;
 
     /**
-     * One Category has Many Products.
-     * @ORM\OneToMany(targetEntity="Products", mappedBy="category")
+     * One Category has Many Subcategories.
+     * @ORM\OneToMany(targetEntity="Subcategories", mappedBy="category")
      */
-    private $products;
-
+    private $subcategories;
 
     //////////////////////////////////
 
     public function __construct() {
-        $this->products = new ArrayCollection();
+        $this->subcategories = new ArrayCollection();
     }
 
     public function preUpdate()
@@ -71,7 +70,7 @@ class Categories
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
@@ -151,36 +150,36 @@ class Categories
     }
 
     /**
-     * Add product
+     * Add subcategory
      *
-     * @param \AppBundle\Entity\Products $product
+     * @param \AppBundle\Entity\Subcategories $subcategory
      *
      * @return Categories
      */
-    public function addProduct(\AppBundle\Entity\Products $product)
+    public function addSubcategory(\AppBundle\Entity\Subcategories $subcategory)
     {
-        $this->products[] = $product;
+        $this->subcategories[] = $subcategory;
 
         return $this;
     }
 
     /**
-     * Remove product
+     * Remove subcategory
      *
-     * @param \AppBundle\Entity\Products $product
+     * @param \AppBundle\Entity\Subcategories $subcategory
      */
-    public function removeProduct(\AppBundle\Entity\Products $product)
+    public function removeSubcategory(\AppBundle\Entity\Subcategories $subcategory)
     {
-        $this->products->removeElement($product);
+        $this->subcategories->removeElement($subcategory);
     }
 
     /**
-     * Get products
+     * Get subcategories
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getProducts()
+    public function getSubcategories()
     {
-        return $this->products;
+        return $this->subcategories;
     }
 }

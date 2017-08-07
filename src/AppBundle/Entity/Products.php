@@ -3,7 +3,9 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use AppBundle\Entity\Categories;
+use AppBundle\Entity\Subcategories;
+use AppBundle\Entity\Statuses;
+
 
 /**
  * Products
@@ -29,33 +31,33 @@ class Products
      */
     private $name;
 
+     /**
+     * @var int
+     *
+     * @ORM\Column(name="year", type="integer", nullable=true)
+     */
+    private $year;
+
     /**
      * @var string
      *
-     * @ORM\Column(name="description", type="string", length=100, nullable=true)
+     * @ORM\Column(name="reference", type="string", length=100)
      */
-    private $description;
+    private $reference;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="price", type="decimal", precision=10, scale=2)
+     * @ORM\Column(name="location", type="string", length=100)
      */
-    private $price;
+    private $location;
 
     /**
-     * @var int
+     * @var string
      *
-     * @ORM\Column(name="quantity", type="integer", nullable=true)
+     * @ORM\Column(name="brand", type="string", length=100)
      */
-    private $quantity;
-
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="vat", type="integer", nullable=true)
-     */
-    private $vat;
+    private $brand;
 
     /**
      * @var \DateTime
@@ -72,15 +74,30 @@ class Products
     private $updateAt;
 
     /**
-     * Many Products have One Category.
-     * @ORM\ManyToOne(targetEntity="Categories", inversedBy="products")
-     * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
+     * Many Products have One Subcategory.
+     * @ORM\ManyToOne(targetEntity="Subcategories", inversedBy="products")
+     * @ORM\JoinColumn(name="subcategory_id", referencedColumnName="id")
      */
-    private $category;
+    private $subcategory;
+
+    /**
+     * Many Products have One Status.
+     * @ORM\ManyToOne(targetEntity="Statuses", inversedBy="products")
+     * @ORM\JoinColumn(name="status_id", referencedColumnName="id")
+     */
+    private $status;
+
+    /**
+     * One Product has Many ProductFiles.
+     * @ORM\OneToMany(targetEntity="ProductFiles", mappedBy="product")
+     */
+    private $productFiles;
+
 
     //////////////////////////////////
 
     public function __construct() {
+        $this->productFiles = new ArrayCollection();
     }
 
     public function preUpdate()
@@ -93,6 +110,7 @@ class Products
     }
 
     //////////////////////////////////
+
 
 
     /**
@@ -130,75 +148,99 @@ class Products
     }
 
     /**
-     * Set description
+     * Set year
      *
-     * @param string $description
+     * @param integer $year
      *
      * @return Products
      */
-    public function setDescription($description)
+    public function setYear($year)
     {
-        $this->description = $description;
+        $this->year = $year;
 
         return $this;
     }
 
     /**
-     * Get description
-     *
-     * @return string
-     */
-    public function getDescription()
-    {
-        return $this->description;
-    }
-
-    /**
-     * Set price
-     *
-     * @param string $price
-     *
-     * @return Products
-     */
-    public function setPrice($price)
-    {
-        $this->price = $price;
-
-        return $this;
-    }
-
-    /**
-     * Get price
-     *
-     * @return string
-     */
-    public function getPrice()
-    {
-        return $this->price;
-    }
-
-    /**
-     * Set vat
-     *
-     * @param integer $vat
-     *
-     * @return Products
-     */
-    public function setVat($vat)
-    {
-        $this->vat = $vat;
-
-        return $this;
-    }
-
-    /**
-     * Get vat
+     * Get year
      *
      * @return integer
      */
-    public function getVat()
+    public function getYear()
     {
-        return $this->vat;
+        return $this->year;
+    }
+
+    /**
+     * Set reference
+     *
+     * @param string $reference
+     *
+     * @return Products
+     */
+    public function setReference($reference)
+    {
+        $this->reference = $reference;
+
+        return $this;
+    }
+
+    /**
+     * Get reference
+     *
+     * @return string
+     */
+    public function getReference()
+    {
+        return $this->reference;
+    }
+
+    /**
+     * Set location
+     *
+     * @param string $location
+     *
+     * @return Products
+     */
+    public function setLocation($location)
+    {
+        $this->location = $location;
+
+        return $this;
+    }
+
+    /**
+     * Get location
+     *
+     * @return string
+     */
+    public function getLocation()
+    {
+        return $this->location;
+    }
+
+    /**
+     * Set brand
+     *
+     * @param string $brand
+     *
+     * @return Products
+     */
+    public function setBrand($brand)
+    {
+        $this->brand = $brand;
+
+        return $this;
+    }
+
+    /**
+     * Get brand
+     *
+     * @return string
+     */
+    public function getBrand()
+    {
+        return $this->brand;
     }
 
     /**
@@ -250,50 +292,84 @@ class Products
     }
 
     /**
-     * Set category
+     * Set subcategory
      *
-     * @param \AppBundle\Entity\Category $category
+     * @param \AppBundle\Entity\Subcategories $subcategory
      *
      * @return Products
      */
-    public function setCategory(\AppBundle\Entity\Category $category = null)
+    public function setSubcategory(\AppBundle\Entity\Subcategories $subcategory = null)
     {
-        $this->category = $category;
+        $this->subcategory = $subcategory;
 
         return $this;
     }
 
     /**
-     * Get category
+     * Get subcategory
      *
-     * @return \AppBundle\Entity\Category
+     * @return \AppBundle\Entity\Subcategories
      */
-    public function getCategory()
+    public function getSubcategory()
     {
-        return $this->category;
+        return $this->subcategory;
     }
 
     /**
-     * Set quantity
+     * Set status
      *
-     * @param integer $quantity
+     * @param \AppBundle\Entity\Statuses $status
      *
      * @return Products
      */
-    public function setQuantity($quantity)
+    public function setStatus(\AppBundle\Entity\Statuses $status = null)
     {
-        $this->quantity = $quantity;
+        $this->status = $status;
 
         return $this;
     }
 
     /**
-     * Get quantity
+     * Get status
      *
-     * @return integer
+     * @return \AppBundle\Entity\Statuses
      */
-    public function getQuantity()
+    public function getStatus()
     {
-        return $this->quantity;
+        return $this->status;
+    }
+
+    /**
+     * Add productFile
+     *
+     * @param \AppBundle\Entity\ProductFiles $productFile
+     *
+     * @return Products
+     */
+    public function addProductFile(\AppBundle\Entity\ProductFiles $productFile)
+    {
+        $this->productFiles[] = $productFile;
+
+        return $this;
+    }
+
+    /**
+     * Remove productFile
+     *
+     * @param \AppBundle\Entity\ProductFiles $productFile
+     */
+    public function removeProductFile(\AppBundle\Entity\ProductFiles $productFile)
+    {
+        $this->productFiles->removeElement($productFile);
+    }
+
+    /**
+     * Get productFiles
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getProductFiles()
+    {
+        return $this->productFiles;
     }
 }

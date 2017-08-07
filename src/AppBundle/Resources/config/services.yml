@@ -1,0 +1,4 @@
+services:
+    used_machines_create_filters:
+        class: AppBundle\Services\CreateFiltersService
+        arguments: ["@doctrine.orm.entity_manager"]

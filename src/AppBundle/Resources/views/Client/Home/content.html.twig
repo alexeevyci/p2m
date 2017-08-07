@@ -11,50 +11,21 @@
 </div>
 <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-		{% set noProductImage = "img/no_product_image.png" %}
     	<div class="last_product_carousel">
-		  	<div class="carousel_item">
-		  		<a href="#">
-		  			<img src="img/products/machine_1.jpg" alt="machine_1.jpg">
+    	{% for product in products %}
+			<div class="carousel_item">
+				{% set productLink = path('product', {'product': product.id}) %}
+		  		<a href="{{ productLink }}">
+		  			{% if(product.productFiles|length > 0) %}
+		  				<img src="img/products/{{product.productFiles[0].name}}" alt="machine_1.jpg">
+		  			{% else %}
+		  				<img src="img/no_product_image.png" alt="machine_1.jpg">
+		  			{% endif %}
 		  		</a>
-		  		<a href="#">F&K gearless CI printing press</a>
-		  		<a href="#" class="carousel_item_code">F17007</a>
-		  	</div>
-		  	<div class="carousel_item">
-		  		<a href="#">
-		  			<img src="img/products/machine_2.jpg" alt="machine_1.jpg">
-		  		</a>
-		  		<a href="#">F&K gearless CI printing press</a>
-		  		<a href="#" class="carousel_item_code">F17007</a>
-		  	</div>
-		  	<div class="carousel_item">
-		  		<a href="#">
-		  			<img src="img/products/machine_3.jpg" alt="machine_1.jpg">
-		  		</a>
-		  		<a href="#">F&K gearless CI printing press</a>
-		  		<a href="#" class="carousel_item_code">F17007</a>
-		  	</div>
-		  	<div class="carousel_item">
-		  		<a href="#">
-		  			<img src="img/products/machine_4.jpg" alt="machine_1.jpg">
-		  		</a>
-		  		<a href="#">F&K gearless CI printing press</a>
-		  		<a href="#" class="carousel_item_code">F17007</a>
-		  	</div>
-		  	<div class="carousel_item">
-		  		<a href="#">
-		  			<img src="img/products/machine_5.jpg" alt="machine_1.jpg">
-		  		</a>
-		  		<a href="#">F&K gearless CI printing press</a>
-		  		<a href="#" class="carousel_item_code">F17007</a>
-		  	</div>
-		  	<div class="carousel_item">
-		  		<a href="#">
-		  			<img src="img/products/machine_6.jpg" alt="machine_1.jpg">
-		  		</a>
-		  		<a href="#">F&K gearless CI printing press</a>
-		  		<a href="#" class="carousel_item_code">F17007</a>
-		  	</div>
+		  		<a href="{{ productLink }}">{{product.name}}</a>
+		  		<a href="{{ productLink }}" class="carousel_item_code">product.reference</a>
+		  	</div> 
+	    {% endfor %}
 		</div>
     </div>
 </div>

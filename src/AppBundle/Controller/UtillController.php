@@ -10,8 +10,8 @@ class UtillController extends Controller
 {
     public function generateMenuAction()
     {
-        $em = $this->getDoctrine()->getManager();
-        $categories = $em->getRepository('AppBundle:Categories')->findAll();
-        return $this->render('@AppBundle\Resources\views\Client\Common\menu.html.twig', compact('categories'));
+        // $em = $this->getDoctrine()->getManager();
+        // $categories = $em->getRepository('AppBundle:Categories')->findAll();
+        // return $this->render('@AppBundle\Resources\views\Client\Common\menu.html.twig', compact('categories'));
     }
 }

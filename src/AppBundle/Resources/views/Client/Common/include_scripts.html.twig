@@ -1,4 +1,9 @@
 <script src="{{ asset('js/library/jquery.js') }}"></script>
 <script src="{{ asset('js/library/bootstrap.min.js') }}"></script>
 <script src="{{ asset('js/library/slick.min.js') }}"></script>
+{% if(extra is defined) %}
+	{% for library in extra %}
+		<script src="{{ asset('js/library/'~library) }}"></script>
+	{% endfor %}
+{% endif %}
 <script src="{{ asset('js/my_script.js') }}"></script>

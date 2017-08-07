@@ -40,6 +40,9 @@ button.my_primary_btn:hover {
     background-color: #666;
     color: #fff;
 }
+.float_right{
+    float: right;
+}
 
 
 /*logo*/
@@ -68,21 +71,21 @@ div.logo_wrapper span.title {
 div.logo_wrapper span.subtitle {
     color: #808080;
 }
-@media (max-width: 600px) {
-    span.title {
+@media (max-width: 620px) {
+    div.logo_wrapper span.title {
         font-size: 22px;
     }
-    span.subtitle {
+    div.logo_wrapper span.subtitle {
         font-size: 14px;
     }
 }
 
 @media (max-width: 530px) {
-    span.title {
-        font-size: 20px;
+    div.logo_wrapper span.title {
+        font-size: 18px;
     }
-    span.subtitle {
-        font-size: 10px;
+    div.logo_wrapper span.subtitle {
+        font-size: 12px;
     }
 }
 
@@ -291,25 +294,6 @@ span.glyphicon {
     color: #32CD32;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*cards*/
 div#products_grid div.card 
 {
@@ -409,24 +393,61 @@ div.go_to a:first-child {
 }
 #grecaptcha_wrapper {
     width: 100%;
+    overflow: hidden;
 }
-/*.g-recaptcha{
-    -moz-transform:scale(1.2);
-    -ms-transform:scale(1.2); 
-    -o-transform:scale(1.2); 
-    -moz-transform-origin:0; 
-    -ms-transform-origin:0;
-    -o-transform-origin:0;
-    -webkit-transform:scale(1.2);
-    transform:scale(1.2);
-    -webkit-transform-origin:0 0;
-    transform-origin:0;
-    margin-top: 20px;
+div.g-recaptcha {
+    margin: 0 auto;
+    width: 304px;
 }
-*/
-/*rc-anchor-normal {
-    height: 74px;
-    width: 60%;}*/
+@media (max-width: 766px) {
+    h5.title {
+        font-weight: bold;
+    }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+    input.width_for_recaptcha {
+        width: 102%;
+    }
+}
+
+/*used machines*/
+.ui-accordion .ui-accordion-content {
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-top: 4px;
+}
+div.filter_line {
+    display: block;
+    width: 100%;
+    /*border-bottom: 1px solid #32CD32;*/
+    /*height: 50px;*/
+}
+div.filter_link {
+    display: block;
+    width: 85%;
+    float:left;
+    padding-bottom: 9px;
+    line-height: 13px;
+}
+div.filter_count {
+    display: block;
+    float: right;
+}
+span.count_badge {
+    background-color: #6B8E23;
+    color: #fff;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.ui-state-default, .ui-state-hover {
+    background-color: #32CD32;
+}
+.ui-state-active {
+    border-color: #6B8E23;
+}
+
 
 
 

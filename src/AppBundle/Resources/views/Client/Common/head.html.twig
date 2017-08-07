@@ -6,5 +6,10 @@
 <link href="{{ asset('css/library/bootstrap.min.css') }}" rel="stylesheet" />
 <link href="{{ asset('css/library/slick.css') }}" rel="stylesheet" />
 <link href="{{ asset('css/library/slick-theme.css') }}" rel="stylesheet" />
-<link href="{{ asset('css/style.css') }}" rel="stylesheet" />
 <script src='https://www.google.com/recaptcha/api.js'></script>
+{% if(extra is defined) %}
+	{% for library in extra %}
+		<link href="{{ asset('css/library/'~library) }}" rel="stylesheet" />
+	{% endfor %}
+{% endif %}
+<link href="{{ asset('css/style.css') }}" rel="stylesheet" />

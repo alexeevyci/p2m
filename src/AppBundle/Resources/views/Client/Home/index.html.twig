@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-    {{ include('@AppBundle/Resources/views/Client/Common/head.html.twig') }}
+    {% include '@AppBundle/Resources/views/Client/Common/head.html.twig' %}
 </head>
 <body>
     <div class="wrapper container">
-        {{ include('@AppBundle/Resources/views/Client/Common/header.html.twig') }}
-        {{ include('@AppBundle/Resources/views/Client/Common/menu.html.twig') }}
-        {{ include('@AppBundle/Resources/views/Client/Home/content.html.twig') }}
+        {%  include('@AppBundle/Resources/views/Client/Common/header.html.twig') %} 
+        {%  include('@AppBundle/Resources/views/Client/Common/menu.html.twig') %} 
+        {% include '@AppBundle/Resources/views/Client/Home/content.html.twig' with products %} 
         <div id="push"></div>
     </div>
-    {{ include('@AppBundle/Resources/views/Client/Common/footer.html.twig') }}
-    {{ include('@AppBundle/Resources/views/Client/Common/back_to_top.html.twig') }}
+    {%  include('@AppBundle/Resources/views/Client/Common/footer.html.twig') %} 
+    {%  include('@AppBundle/Resources/views/Client/Common/back_to_top.html.twig') %} 
 </body>
-{{ include('@AppBundle/Resources/views/Client/Common/include_scripts.html.twig') }}
+{% include('@AppBundle/Resources/views/Client/Common/include_scripts.html.twig') %} 
 </html>

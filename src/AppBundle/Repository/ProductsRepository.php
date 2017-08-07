@@ -13,15 +13,25 @@ use Doctrine\ORM\EntityRepository;
 class ProductsRepository extends \Doctrine\ORM\EntityRepository
 {
 	const ZERO = 0;
+	const PRODUCTSFORHOMEPAGE = 6;
 
-	public function getProducts() {
+	// public function getProducts() {
+	// 	$query = $this->createQueryBuilder('pr')
+	// 	    ->select('pr')
+	// 	    ->where("pr.quantity > :zero")
+	// 	    ->setParameter('zero', self::ZERO)
+	// 	    ->orderBy('pr.price', 'ASC');
+	// 	$result = $query->getQuery()->getResult();
+	// 	return $result;
+
+	// }
+
+	public function getNewestProducts() {
 		$query = $this->createQueryBuilder('pr')
 		    ->select('pr')
-		    ->where("pr.quantity > :zero")
-		    ->setParameter('zero', self::ZERO)
-		    ->orderBy('pr.price', 'ASC');
+		    ->orderBy('pr.createdAt', 'DESC')
+		    ->setMaxResults(self::PRODUCTSFORHOMEPAGE);
 		$result = $query->getQuery()->getResult();
 		return $result;
-
 	}
 }

@@ -1,19 +1,19 @@
 <div class="container wrapper_footer">
 	<div class="row">
-	    <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+	    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
 	    	<h5 class="text-center title">NEWSLETTER SUBSCIBE</h5>
 	        <div class="subscribe">
 	        	{{ form_start(newsletterForm) }}
 	        	<div class="form-group">
-				    {{ form_widget(newsletterForm.name, { 'attr': {'class': 'form-control', 'placeholder': newsletterForm.name.vars.label}}) }}
+				    {{ form_widget(newsletterForm.name, { 'attr': {'class': 'form-control width_for_recaptcha', 'placeholder': newsletterForm.name.vars.label}}) }}
 				    {{ form_errors(newsletterForm.name) }}
 			    </div>
 			    <div class="form-group">
-				    {{ form_widget(newsletterForm.email, { 'attr': {'class': 'form-control', 'placeholder': newsletterForm.email.vars.label}}) }}
+				    {{ form_widget(newsletterForm.email, { 'attr': {'class': 'form-control width_for_recaptcha', 'placeholder': newsletterForm.email.vars.label}}) }}
 				    {{ form_errors(newsletterForm.email) }}
 			    </div>
 			    <div class="form-group" id="grecaptcha_wrapper">
-			    	<div class="g-recaptcha" data-sitekey="6LcthyoUAAAAADMuvPuy17kfoDB8v3u7BAYA7bd4"></div>
+			    	<div class="g-recaptcha" data-sitekey="6LcthyoUAAAAADMuvPuy17kfoDB8v3u7BAYA7bd4" data-size="normal"></div>
 			    </div>
 			    <div class="form-group text-center">
 				    {{ form_widget(newsletterForm.subscribe, { 'attr': {'class': 'btn my_primary_btn'}}) }}
@@ -21,7 +21,7 @@
 				{{ form_end(newsletterForm) }}
 	        </div>
 	    </div>
-	    <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+	    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
 	    	<h5 class="text-center title">GO TO</h5>
 	    	<div class="go_to">
 		        <a href="#">Used machines</a>
@@ -31,7 +31,7 @@
 		        <a href="#">Contact</a>
 		    </div>
 	    </div>
-	    <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+	    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
 	    	<h5 class="text-center title">CONTACT INFORMATION</h5>
 	        <div class="textwidget">
 	        	<p>Galred Europe BV</p>
