@@ -7,6 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Form\ProductsFiltersType;
 use AppBundle\Form\NewsletterType;
+use AppBundle\Form\ContactType;
 use GuzzleHttp\Client;
 use Nietonfir\Google\ReCaptcha\ReCaptcha;
 use Nietonfir\Google\ReCaptcha\Api\RequestData;
@@ -51,19 +52,41 @@ class DefaultController extends Controller
         ));
     }
 
-    public function usedMachinesAction(Request $request)
-    {
-
-
-// Debug::enable();
+    public function usedMachinesAction(Request $request) {
+        $em    = $this->get('doctrine.orm.entity_manager');
         $filters = $this->get('used_machines_create_filters')->getFilters();
+
+        //$pagination
+        $category = null;
+        $subcategory = null;
+        $search=null;
+        if($request->query->has('category')) {
+            $category = $request->query->getInt('category');
+        }
+        if($request->query->has('subcategory')) {
+            $subcategory = $request->query->getInt('subcategory');
+        }
+        if($request->query->has('search')) {
+            $search = $request->query->get('search');
+        }
+        // $products   = $em->getRepository('AppBundle:Products')->findBy(array(), array('id'=>'asc'));
+        $products   = $em->getRepository('AppBundle:Products')->getProducts($category, $subcategory, $search);
+        // dump($products); die();
+        $paginator  = $this->get('knp_paginator');
+        $pagination = $paginator->paginate(
+            $products, /* query NOT result */
+            $request->query->getInt('page', 1)/*page number*/,
+            9/*limit per page*/
+        );
+
         
         // newsletter
         $newsletterForm = $this->createForm(NewsletterType::class, null);
         $newsletterForm->handleRequest($request);
         return $this->render('@AppBundle\Resources\views\Client\UsedMachines\index.html.twig', array(
             'newsletterForm' => $newsletterForm->createView(),
-            'filters' => $filters
+            'filters' => $filters,
+            'pagination' => $pagination
         ));
     }
 
@@ -96,10 +119,14 @@ class DefaultController extends Controller
 
     public function contactAction(Request $request)
     {
+        // contact
+        $contactForm = $this->createForm(ContactType::class, null);
+        // newsletter
         $newsletterForm = $this->createForm(NewsletterType::class, null);
         $newsletterForm->handleRequest($request);
         return $this->render('@AppBundle\Resources\views\Client\Contact\index.html.twig', array(
-            'newsletterForm' => $newsletterForm->createView()
+            'newsletterForm' => $newsletterForm->createView(),
+            'contactForm' => $contactForm->createView()
         ));
     }
 

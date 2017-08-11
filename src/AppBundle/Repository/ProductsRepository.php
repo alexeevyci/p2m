@@ -34,4 +34,27 @@ class ProductsRepository extends \Doctrine\ORM\EntityRepository
 		$result = $query->getQuery()->getResult();
 		return $result;
 	}
+
+	public function getProducts($category, $subcategory, $search) {
+		$query = $this->createQueryBuilder('pr')
+		    ->select('pr')
+		    ->orderBy('pr.id', 'ASC');
+		if ($category) {
+			$query->join("pr.subcategory", 'sc')
+				->join("sc.category", 'ca')
+				->andWhere("ca.id = :categoryId")
+				->setParameter('categoryId', $category);
+		}
+		if ($subcategory) {
+			$query->join("pr.subcategory", 'sc')
+			->andWhere("sc.id = :subcategoryId")
+			->setParameter('subcategoryId', $subcategory);
+		}
+		if ($search) {
+			// $query->andWhere("pr.name = :search")
+			// 	->setParameter('search', $query->expr()->literal('%'.$search.'%'));
+			$query->andWhere($query->expr()->like('pr.name', $query->expr()->literal('%' . $search . '%')));
+		}
+		return $query->getQuery();
+	}
 }

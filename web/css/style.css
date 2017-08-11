@@ -43,6 +43,9 @@ button.my_primary_btn:hover {
 .float_right{
     float: right;
 }
+.mrg_top_30 {
+    margin-top: 30px;
+}
 
 
 /*logo*/
@@ -294,22 +297,6 @@ span.glyphicon {
     color: #32CD32;
 }
 
-/*cards*/
-div#products_grid div.card 
-{
-    width: 100%;
-    margin-bottom: 30px; 
-}
-div#products_grid div.card img.card-img-top 
-{
-    width: 100%;
-    padding: 5%; 
-}
-div#products_grid div.card div.card-block p.card-text 
-{
-    text-align: justify; 
-}
-
 /*home text*/
 div.home_text_wrapper {
   margin-bottom: 40px;
@@ -410,11 +397,12 @@ div.g-recaptcha {
     }
 }
 
-/*used machines*/
+/*used machines - filter*/
 .ui-accordion .ui-accordion-content {
     padding-left: 3px;
     padding-right: 3px;
     padding-top: 4px;
+    padding-bottom: 0;
 }
 div.filter_line {
     display: block;
@@ -426,8 +414,12 @@ div.filter_link {
     display: block;
     width: 85%;
     float:left;
+    padding-top: 1px;
     padding-bottom: 9px;
     line-height: 13px;
+}
+div.filter_link .for_category {
+    color: #32CD32;
 }
 div.filter_count {
     display: block;
@@ -446,6 +438,58 @@ span.count_badge {
 }
 .ui-state-active {
     border-color: #6B8E23;
+}
+.ui-state-default a, .ui-state-default a:link {
+    color: #808080;
+}
+.ui-widget-content a {
+    color: #808080;
+}
+
+/* used machines - pagination */
+.pagination>li>a, .pagination>li>span, .pagination>li>a:hover {
+    color: #808080;
+}
+.pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+    background-color: #32CD32;
+    border-color: #32CD32;
+}
+
+/* used machines - cards */
+div#products_grid div.card 
+{
+    width: 100%;
+    margin-bottom: 30px; 
+}
+div#products_grid div.card img.card-img-top 
+{
+    width: 100%;
+    padding: 5%; 
+}
+div#products_grid div.card div.card-block p.card-text 
+{
+    text-align: justify; 
+}
+.btn-lime {
+    color: #fff;
+    background-color: #32CD32;
+    border-color: #32CD32;
+}
+.btn-lime:hover {
+    color: #fff;
+    background-color: #6B8E23;
+    border-color: #6B8E23;
+}
+
+/*contact map*/
+div#contact_map {
+    height: 350px;
+    width: 100%;
+}
+
+/*contact form*/
+textarea.description_height {
+    height: 83px;
 }
 
 

@@ -1,13 +1,50 @@
 <div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 home_text_wrapper">
-    	<h1>Contact page</h1>
-    	<h1>Contact page</h1>
-    	<h1>Contact page</h1>
-    	<h1>Contact page</h1>
-    	<h1>Contact page</h1>
-    	<h1>Contact page</h1>
-    	<h1>Contact page</h1>
-    	<h1>Contact page</h1>
-    	<h1>Contact page</h1>
+    <div class="col-xs-12 col-sm-12 col-md-10 col-lg-8 col-md-offset-1 col-lg-offset-2">
+    	<div id="contact_map"></div>
+    </div>
+    <div class="space_20"></div>
+    <div class="col-xs-12 col-sm-12 col-md-10 col-lg-8 col-md-offset-1 col-lg-offset-2 mrg_top_30">            
+        {{ form_start(contactForm) }}
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    <div class="form-group">
+                        {{ form_widget(contactForm.name, { 'attr': {'class': 'form-control', 'placeholder': contactForm.name.vars.label}}) }}
+                        {{ form_errors(contactForm.name) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_widget(contactForm.email, { 'attr': {'class': 'form-control', 'placeholder': contactForm.email.vars.label}}) }}
+                        {{ form_errors(contactForm.email) }}
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    <div class="form-group">
+                        {{ form_widget(contactForm.message, { 'attr': {'class': 'form-control description_height', 'placeholder': contactForm.message.vars.label}}) }}
+                        {{ form_errors(contactForm.message) }}
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="form-group" id="grecaptcha_wrapper">
+                <div class="g-recaptcha" data-sitekey="6LcthyoUAAAAADMuvPuy17kfoDB8v3u7BAYA7bd4" data-size="normal"></div>
+            </div> -->
+            <div class="form-group text-center">
+                {{ form_widget(contactForm.send, { 'attr': {'class': 'btn btn-lime'}}) }}
+            </div>
+        {{ form_end(contactForm) }}
     </div>
 </div>
+<script>
+  function initMap() {
+    var point = {lat: -25.363, lng: 131.044};
+    var map = new google.maps.Map(document.getElementById('contact_map'), {
+      zoom: 6,
+      center: point
+    });
+    var marker = new google.maps.Marker({
+      position: point,
+      map: map
+    });
+  }
+</script>
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAe0apUUM54eripUfE3ioVAOxy2GJzZCkU&callback=initMap">
+</script>

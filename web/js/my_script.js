@@ -28,12 +28,14 @@ $(document).ready(function() {
 	});
 
  	// filters accordion
- 	$(".filters_accordion").accordion({
-	  	collapsible: true, 
-	  	active: false,
-	  	heightStyle: "content",
-	  	icons: false 
-	});
+ 	if ($(".filters_accordion").length) {
+	 	$(".filters_accordion").accordion({
+		  	collapsible: true, 
+		  	active: false,
+		  	heightStyle: "content",
+		  	icons: false 
+		});
+	 }
 
  	 
 });

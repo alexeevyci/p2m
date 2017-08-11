@@ -7,7 +7,7 @@
     <div class="wrapper container">
         {{ include('@AppBundle/Resources/views/Client/Common/header.html.twig') }}
         {{ include('@AppBundle/Resources/views/Client/Common/menu.html.twig') }}
-        {% include('@AppBundle/Resources/views/Client/UsedMachines/content.html.twig') with filters %}
+        {% include('@AppBundle/Resources/views/Client/UsedMachines/content.html.twig') with {'filters':filters, 'pagination':pagination} %}
         <div id="push"></div>
     </div>
     {{ include('@AppBundle/Resources/views/Client/Common/footer.html.twig') }}
