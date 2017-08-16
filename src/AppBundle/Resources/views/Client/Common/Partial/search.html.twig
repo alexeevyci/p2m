@@ -1,8 +1,11 @@
 <div class="input-group col-md-12">
-    <input type="text" class="form-control" placeholder="Search" />
-    <span class="input-group-btn">
+    <input type="text" class="form-control input_search" placeholder="Search" />
+    <span class="input-group-btn search_span">
         <button class="btn btn-info" type="button">
             <i class="glyphicon glyphicon-search"></i>
         </button>
     </span>
 </div>
+<script type="text/javascript">
+	var search_url = "{{url('used_machines')}}";
+</script>

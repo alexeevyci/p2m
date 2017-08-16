@@ -36,8 +36,6 @@ class DefaultController extends Controller
                 $reCaptcha = new ReCaptcha(new Client(), new ResponseFactory());
                 $responseReCaptcha = $reCaptcha->processRequest($requestData);
                 if ($responseReCaptcha->isValid()) {
-                    dump($res);
-                    die("===");
                 }
                 
                 // $em->persist($formData);
@@ -101,10 +99,23 @@ class DefaultController extends Controller
 
     public function sparePartsAction(Request $request)
     {
+        $em    = $this->get('doctrine.orm.entity_manager');
+
+        //$pagination
+        $parts   = $em->getRepository('AppBundle:Parts')->findBy(array(), array('id'=>'asc'));
+        $paginator  = $this->get('knp_paginator');
+        $pagination = $paginator->paginate(
+            $parts, /* query NOT result */
+            $request->query->getInt('page', 1)/*page number*/,
+            12/*limit per page*/
+        );
+        
+        // newsletter
         $newsletterForm = $this->createForm(NewsletterType::class, null);
         $newsletterForm->handleRequest($request);
         return $this->render('@AppBundle\Resources\views\Client\SpareParts\index.html.twig', array(
-            'newsletterForm' => $newsletterForm->createView()
+            'newsletterForm' => $newsletterForm->createView(),
+            'pagination' => $pagination
         ));
     }
 
@@ -112,7 +123,7 @@ class DefaultController extends Controller
     {
         $newsletterForm = $this->createForm(NewsletterType::class, null);
         $newsletterForm->handleRequest($request);
-        return $this->render('@AppBundle\Resources\views\Client\Newsletter\index.html.twig', array(
+        return $this->render('@AppBundle\Resources\views\Client\SpareParts\index.html.twig', array(
             'newsletterForm' => $newsletterForm->createView()
         ));
     }

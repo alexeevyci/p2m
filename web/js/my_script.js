@@ -37,5 +37,33 @@ $(document).ready(function() {
 		});
 	 }
 
+
+	// search
+	$('.input_search').keypress(function (e) {
+	 	var key = e.which;
+	 	if(key == 13) { // the enter key code
+		    $(this).siblings('.search_span').click();
+	  	}
+	});   
+	$('.search_span').on('click', function() {
+		var searchText = $(this).siblings('.input_search').val();
+		if (searchText) {
+			window.location = createSearchLink(searchText);
+		}
+	});
+
  	 
 });
+
+function createSearchLink(searchText) {
+	var parameters = {'search': searchText};
+	var querystring = encodeQueryData(parameters);
+	return search_url + '?' + querystring;
+}
+
+function encodeQueryData(data) {
+   let ret = [];
+   for (let d in data)
+     ret.push(encodeURIComponent(d) + '=' + encodeURIComponent(data[d]));
+   return ret.join('&');
+}

@@ -46,6 +46,19 @@ button.my_primary_btn:hover {
 .mrg_top_30 {
     margin-top: 30px;
 }
+.bk_color_ddd {
+    background-color: #ddd;
+}
+.btn-lime {
+    color: #fff;
+    background-color: #32CD32;
+    border-color: #32CD32;
+}
+.btn-lime:hover {
+    color: #fff;
+    background-color: #6B8E23;
+    border-color: #6B8E23;
+}
 
 
 /*logo*/
@@ -470,16 +483,6 @@ div#products_grid div.card div.card-block p.card-text
 {
     text-align: justify; 
 }
-.btn-lime {
-    color: #fff;
-    background-color: #32CD32;
-    border-color: #32CD32;
-}
-.btn-lime:hover {
-    color: #fff;
-    background-color: #6B8E23;
-    border-color: #6B8E23;
-}
 
 /*contact map*/
 div#contact_map {
@@ -488,10 +491,39 @@ div#contact_map {
 }
 
 /*contact form*/
-textarea.description_height {
+.contact_form .form-group {
+        margin-bottom: 8px;
+}
+.contact_form label {
+    margin-bottom: 3px;
+} 
+.contact_form .form-control {
+    height: 26px;
+    padding-left: 10px;
+    font-size: 12px;
+}
+
+.contact_form textarea.description_height {
     height: 83px;
 }
 
+/* spare parts */
+div#parts_grid div.card 
+{
+    width: 100%;
+    margin-bottom: 30px; 
+}
+div#parts_grid img.card-img-top 
+{
+    height: 200px;
+    padding: 7%; 
+    /*width: 100%;*/
+    /*padding: 5%; */
+}
+div#parts_grid div.card div.card-block p.card-text 
+{
+    text-align: justify; 
+}
 
 
 

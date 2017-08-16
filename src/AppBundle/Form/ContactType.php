@@ -6,6 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Doctrine\ORM\EntityRepository;
@@ -16,9 +17,19 @@ class ContactType extends AbstractType
 {
 
     public function buildForm(FormBuilderInterface $builder, array $options) {
+        $builder->add('company', TextType::class,array(
+            'mapped'=> false,
+            'label' => 'Company',
+            'required'=>true
+        ));
         $builder->add('name', TextType::class,array(
             'mapped'=> false,
             'label' => 'Name',
+            'required'=>true
+        ));
+        $builder->add('telephone', TextType::class,array(
+            'mapped'=> false,
+            'label' => 'Telephone',
             'required'=>true
         ));
         $builder->add('email', EmailType::class,array(
@@ -26,10 +37,31 @@ class ContactType extends AbstractType
             'label' => 'E-mail',
             'required'=>true
         ));
-        $builder->add('message', TextareaType::class,array(
+        $builder->add('interest', ChoiceType::class,array(
             'mapped'=> false,
-            'label' => 'Message',
+            'label' => 'Area of interest',
+            'required'=>true,
+            'choices'  => array(
+                'Buying' => 'buying',
+                'Selling' => 'selling',
+                'General' => 'general'
+            ),
+            'placeholder' => 'Choose an option'
+        ));
+        $builder->add('details', TextareaType::class,array(
+            'mapped'=> false,
+            'label' => 'Details',
             'required'=>true
+        ));
+        $builder->add('contactMethod', ChoiceType::class,array(
+            'mapped'=> false,
+            'label' => 'Prefered Method Of Contact',
+            'required'=>true,
+            'choices'  => array(
+                'Telephone' => 'telephone',
+                'Email' => 'email'
+            ),
+            'placeholder' => 'Choose an option'
         ));
         $builder->add('send', SubmitType::class, array(
         	'label' => 'Send',

@@ -1,13 +1,29 @@
-<div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 home_text_wrapper">
-    	<h1>Newsletter page</h1>
-    	<h1>Newsletter page</h1>
-    	<h1>Newsletter page</h1>
-    	<h1>Newsletter page</h1>
-    	<h1>Newsletter page</h1>
-    	<h1>Newsletter page</h1>
-    	<h1>Newsletter page</h1>
-    	<h1>Newsletter page</h1>
-    	<h1>Newsletter page</h1>
-    </div>
+<div class="row" id="parts_grid">
+    {% for part in pagination %}
+        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+            <div class="card">
+                <div class="card-block">
+                    {% set partLink = path('product', {'product': part.id}) %}
+                    <a href="{{ partLink }}">
+
+                        {% if(part.productFiles|length > 0) %}
+                            <img src="img/parts/{{part.productFiles[0].name}}" alt="machine_1.jpg" class="card-img-top">
+                        {% else %}
+                            <img src="img/no_product_image.png" alt="machine_1.jpg"  class="card-img-top">
+                        {% endif %}
+                    </a>
+                    <div class="card-block">
+                        <h4 class="card-title">{{part.name}}</h4>
+                    </div>
+                    <div class="text-center">
+                        <a href="{{ partLink }}" class="btn btn-lime">View details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
 </div>
+<div class="navigation">
+    {{ knp_pagination_render(pagination)|raw }}
+</div>
+

@@ -43,6 +43,13 @@ class ProductFiles
      */
     private $product;
 
+    /**
+     * Many ProductFiles have One Part.
+     * @ORM\ManyToOne(targetEntity="Parts", inversedBy="productFiles")
+     * @ORM\JoinColumn(name="part_id", referencedColumnName="id")
+     */
+    private $part;
+
     /////////////////////////////////////////
 
     /**
@@ -125,5 +132,29 @@ class ProductFiles
     public function getProduct()
     {
         return $this->product;
+    }
+
+    /**
+     * Set part
+     *
+     * @param \AppBundle\Entity\Parts $part
+     *
+     * @return ProductFiles
+     */
+    public function setPart(\AppBundle\Entity\Parts $part = null)
+    {
+        $this->part = $part;
+
+        return $this;
+    }
+
+    /**
+     * Get part
+     *
+     * @return \AppBundle\Entity\Parts
+     */
+    public function getPart()
+    {
+        return $this->part;
     }
 }
