@@ -32,6 +32,12 @@ a, a:hover, a:focus {
 .mrg_top_10 {
     margin-top: 10px;
 }
+.mrg_top_30 {
+    margin-top: 30px;
+}
+.pdg_bot_10 {
+    padding-bottom: 10px;
+}
 button.my_primary_btn {
     background-color: #808080;
     color: #fff;
@@ -42,9 +48,6 @@ button.my_primary_btn:hover {
 }
 .float_right{
     float: right;
-}
-.mrg_top_30 {
-    margin-top: 30px;
 }
 .bk_color_ddd {
     background-color: #ddd;
@@ -504,7 +507,7 @@ div#contact_map {
 }
 
 .contact_form textarea.description_height {
-    height: 83px;
+    height: 140px;
 }
 
 /* spare parts */
@@ -520,8 +523,7 @@ div#parts_grid img.card-img-top
     /*width: 100%;*/
     /*padding: 5%; */
 }
-div#parts_grid div.card div.card-block p.card-text 
-{
+div#parts_grid div.card div.card-block p.card-text {
     text-align: justify; 
 }
 

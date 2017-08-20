@@ -132,6 +132,36 @@ class DefaultController extends Controller
     {
         // contact
         $contactForm = $this->createForm(ContactType::class, null);
+        $contactForm->handleRequest($request);
+        if ($contactForm->isSubmitted()) {
+            if ($contactForm->isValid()) {
+                $res = $request->request->get('contact');
+                // $message = (new \Swift_Message('Hello Email'))
+                //     ->setFrom('send@example.com')
+                //     ->setTo('recipient@example.com')
+                //     ->setBody(
+                //         $this->renderView(
+                //             // app/Resources/views/Emails/registration.html.twig
+                //             '@AppBundle\Resources\views\Client\Email\contact.html.twig',
+                //             array('name' => "my_name")
+                //         ),
+                //         'text/html'
+                //     );
+
+                // dump($mailer->send($message));
+                // die("---");
+
+                $message = \Swift_Message::newInstance()
+                    ->setSubject('Some Subject')
+                    ->setFrom('alexeevyci@gmail.com')
+                    ->setTo('alexandruasaftei2@gmail.com')
+                    ->setBody('AppBundle:Email:contact.html.twig', 'text/html');
+                $this->get('mailer')
+                    ->send($message);
+                die("sent");
+
+            }
+        }
         // newsletter
         $newsletterForm = $this->createForm(NewsletterType::class, null);
         $newsletterForm->handleRequest($request);

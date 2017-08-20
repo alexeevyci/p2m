@@ -1,49 +1,31 @@
 <div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-10 col-lg-8 col-md-offset-1 col-lg-offset-2">
-    	<div id="contact_map"></div>
-    </div>
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mrg_top_30 contact_form">            
         {{ form_start(contactForm) }}
             <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 bk_color_ddd">
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 bk_color_ddd pdg_bot_10">
                     <h4>ENQUIRY FORM</h4>
                     <div class="form-group">
                         {{ form_label(contactForm.company) }}
-                        {{ form_widget(contactForm.company, { 'attr': {'class': 'form-control', 'placeholder': contactForm.company.vars.label}}) }}
+                        {{ form_widget(contactForm.company, { 'attr': {'class': 'form-control'}}) }}
                         {{ form_errors(contactForm.company) }}
                     </div>
                     <div class="form-group">
-                        {{ form_label(contactForm.name) }}
-                        {{ form_widget(contactForm.name, { 'attr': {'class': 'form-control', 'placeholder': contactForm.name.vars.label}}) }}
-                        {{ form_errors(contactForm.name) }}
-                    </div>
-                    <div class="form-group">
                         {{ form_label(contactForm.telephone) }}
-                        {{ form_widget(contactForm.telephone, { 'attr': {'class': 'form-control', 'placeholder': contactForm.telephone.vars.label}}) }}
+                        {{ form_widget(contactForm.telephone, { 'attr': {'class': 'form-control'}}) }}
                         {{ form_errors(contactForm.telephone) }}
                     </div>
                     <div class="form-group">
-                        {{ form_label(contactForm.email) }}
-                        {{ form_widget(contactForm.email, { 'attr': {'class': 'form-control', 'placeholder': contactForm.email.vars.label}}) }}
-                        {{ form_errors(contactForm.email) }}
+                        {{ form_label(contactForm.country) }}
+                        {{ form_widget(contactForm.country, { 'attr': {'class': 'form-control'}}) }}
+                        {{ form_errors(contactForm.country) }}
                     </div>
                 </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 bk_color_ddd">
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 bk_color_ddd pdg_bot_10">
                     <h4 class="invisible">Just for padding</h4>
                     <div class="form-group">
-                        {{ form_label(contactForm.details) }}
-                        {{ form_widget(contactForm.details, { 'attr': {'class': 'form-control description_height', 'placeholder': contactForm.details.vars.label}}) }}
-                        {{ form_errors(contactForm.details) }}
-                    </div>
-                    <div class="form-group">
-                        {{ form_label(contactForm.interest) }}
-                        {{ form_widget(contactForm.interest, { 'attr': {'class': 'form-control', 'placeholder': contactForm.interest.vars.label}}) }}
-                        {{ form_errors(contactForm.interest) }}
-                    </div>
-                    <div class="form-group">
-                        {{ form_label(contactForm.contactMethod) }}
-                        {{ form_widget(contactForm.contactMethod, { 'attr': {'class': 'form-control', 'placeholder': contactForm.contactMethod.vars.label}}) }}
-                        {{ form_errors(contactForm.contactMethod) }}
+                        {{ form_label(contactForm.message) }}
+                        {{ form_widget(contactForm.message, { 'attr': {'class': 'form-control description_height'}}) }}
+                        {{ form_errors(contactForm.message) }}
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 contact_note">
@@ -60,6 +42,9 @@
             </div> -->
             
         {{ form_end(contactForm) }}
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-10 col-lg-8 col-md-offset-1 col-lg-offset-2 mrg_top_30">
+        <div id="contact_map"></div>
     </div>
 </div>
 <script>
