@@ -153,12 +153,12 @@ class DefaultController extends Controller
 
                 $message = \Swift_Message::newInstance()
                     ->setSubject('Some Subject')
-                    ->setFrom('alexeevyci@gmail.com')
-                    ->setTo('alexandruasaftei2@gmail.com')
-                    ->setBody('AppBundle:Email:contact.html.twig', 'text/html');
-                $this->get('mailer')
-                    ->send($message);
-                die("sent");
+                    ->setFrom(['alexeevyci@gmail.com' => 'John Doe'])
+                    ->setTo(['alexandruasaftei2@gmail.com' => 'alex2'])
+                    ->setBody('Here is the message itself');
+                $result = $this->get('mailer')->send($message);
+                var_dump($result); die("[]");
+
 
             }
         }
