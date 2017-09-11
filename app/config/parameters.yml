@@ -10,3 +10,4 @@ parameters:
     mailer_user: alexeevyci@gmail.com
     mailer_password: Aa154815
     secret: ThisTokenIsNotSoSecretChangeIt
+    img_path: "/p2m/web/img/"

@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Newsletter;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -21,11 +22,12 @@ class DefaultController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $products = $em->getRepository('AppBundle:Products')->getNewestProducts();
-        // newsletter
-        $newsletterForm = $this->createForm(NewsletterType::class, null);
-        $newsletterForm->handleRequest($request);
-        if ($newsletterForm->isSubmitted()) {
-            if ($newsletterForm->isValid()) {
+
+        // footer
+        $footerForm = $this->createForm(NewsletterType::class, null);
+        $footerForm->handleRequest($request);
+        if ($footerForm->isSubmitted()) {
+            if ($footerForm->isValid()) {
                 $res = $request->request->get('newsletter');
 
                 $requestData = new RequestData(
@@ -46,7 +48,7 @@ class DefaultController extends Controller
 
         return $this->render('@AppBundle\Resources\views\Client\Home\index.html.twig', array(
             'products' => $products,
-            'newsletterForm' => $newsletterForm->createView()
+            'footerForm' => $footerForm->createView()
         ));
     }
 
@@ -78,11 +80,11 @@ class DefaultController extends Controller
         );
 
         
-        // newsletter
-        $newsletterForm = $this->createForm(NewsletterType::class, null);
-        $newsletterForm->handleRequest($request);
+        // footer
+        $footerForm = $this->createForm(NewsletterType::class, null);
+        $footerForm->handleRequest($request);
         return $this->render('@AppBundle\Resources\views\Client\UsedMachines\index.html.twig', array(
-            'newsletterForm' => $newsletterForm->createView(),
+            'footerForm' => $footerForm->createView(),
             'filters' => $filters,
             'pagination' => $pagination
         ));
@@ -90,10 +92,10 @@ class DefaultController extends Controller
 
     public function sellYourMachinesAction(Request $request)
     {
-        $newsletterForm = $this->createForm(NewsletterType::class, null);
-        $newsletterForm->handleRequest($request);
+        $footerForm = $this->createForm(NewsletterType::class, null);
+        $footerForm->handleRequest($request);
         return $this->render('@AppBundle\Resources\views\Client\SellYourMachines\index.html.twig', array(
-            'newsletterForm' => $newsletterForm->createView()
+            'footerForm' => $footerForm->createView()
         ));
     }
 
@@ -110,20 +112,35 @@ class DefaultController extends Controller
             12/*limit per page*/
         );
         
-        // newsletter
-        $newsletterForm = $this->createForm(NewsletterType::class, null);
-        $newsletterForm->handleRequest($request);
+        // footer
+        $footerForm = $this->createForm(NewsletterType::class, null);
+        $footerForm->handleRequest($request);
         return $this->render('@AppBundle\Resources\views\Client\SpareParts\index.html.twig', array(
-            'newsletterForm' => $newsletterForm->createView(),
+            'footerForm' => $footerForm->createView(),
             'pagination' => $pagination
         ));
     }
 
-    public function newsletterAction(Request $request)
-    {
+    public function newsletterAction(Request $request) {
+        $em    = $this->get('doctrine.orm.entity_manager');
+        //newsletter form
         $newsletterForm = $this->createForm(NewsletterType::class, null);
         $newsletterForm->handleRequest($request);
-        return $this->render('@AppBundle\Resources\views\Client\SpareParts\index.html.twig', array(
+        if ($newsletterForm->isSubmitted()) {
+            if ($newsletterForm->isValid()) {
+                $postData = $request->request->get('newsletter');
+                $newsletter = new Newsletter();
+                $newsletter->setName($postData['name']);
+                $newsletter->setEmail($postData['email']);
+                $em->persist($newsletter);
+                $em->flush();
+            }
+        }
+        //footer form
+        $footerForm = $this->createForm(NewsletterType::class, null);
+        $footerForm->handleRequest($request);
+        return $this->render('@AppBundle\Resources\views\Client\Newsletter\index.html.twig', array(
+            'footerForm' => $footerForm->createView(),
             'newsletterForm' => $newsletterForm->createView()
         ));
     }
@@ -162,21 +179,21 @@ class DefaultController extends Controller
 
             }
         }
-        // newsletter
-        $newsletterForm = $this->createForm(NewsletterType::class, null);
-        $newsletterForm->handleRequest($request);
+        // footer
+        $footerForm = $this->createForm(NewsletterType::class, null);
+        $footerForm->handleRequest($request);
         return $this->render('@AppBundle\Resources\views\Client\Contact\index.html.twig', array(
-            'newsletterForm' => $newsletterForm->createView(),
+            'footerForm' => $footerForm->createView(),
             'contactForm' => $contactForm->createView()
         ));
     }
 
     public function productAction(Products $product, Request $request)
     {
-        $newsletterForm = $this->createForm(NewsletterType::class, null);
-        $newsletterForm->handleRequest($request);
+        $footerForm = $this->createForm(NewsletterType::class, null);
+        $footerForm->handleRequest($request);
         return $this->render('@AppBundle\Resources\views\Client\Product\index.html.twig', array(
-            'newsletterForm' => $newsletterForm->createView(),
+            'footerForm' => $footerForm->createView(),
             'product' => $product
         ));
     }

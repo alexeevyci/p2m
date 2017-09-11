@@ -1,13 +1,49 @@
 <div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 home_text_wrapper">
-    	<h1>Newsletter page</h1>
-    	<h1>Newsletter page</h1>
-    	<h1>Newsletter page</h1>
-    	<h1>Newsletter page</h1>
-    	<h1>Newsletter page</h1>
-    	<h1>Newsletter page</h1>
-    	<h1>Newsletter page</h1>
-    	<h1>Newsletter page</h1>
-    	<h1>Newsletter page</h1>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 newsletter_top_text mrg_bottom_20">
+		<p>There are always new things happening in the printing industry and at Styers Equipment Company.  Stay connected by signing up for our newsletter or downloading the latest edition of our equipment sales bulletin.</p>
     </div>
 </div>
+<div class="row">
+	<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 newsletter_left_side">
+		<h4 class="title"> <i class="glyphicon glyphicon-envelope"></i>Sign up for our Email Newsletter</h4>
+			{{ form_start(newsletterForm) }}
+			<div class="form-group">
+				{{ form_label(newsletterForm.name) }}
+				{{ form_widget(newsletterForm.name, { 'attr': {'class': 'form-control width_for_recaptcha'}}) }}
+				{{ form_errors(newsletterForm.name) }}
+			</div>
+			<div class="form-group">
+				{{ form_label(newsletterForm.email) }}
+				{{ form_widget(newsletterForm.email, { 'attr': {'class': 'form-control width_for_recaptcha'}}) }}
+				{{ form_errors(newsletterForm.email) }}
+			</div>
+			{#<div class="form-group" id="grecaptcha_wrapper">#}
+				{#<div class="g-recaptcha" data-sitekey="6LcthyoUAAAAADMuvPuy17kfoDB8v3u7BAYA7bd4" data-size="normal"></div>#}
+			{#</div>#}
+			<div class="form-group text-center">
+				{{ form_widget(newsletterForm.subscribe, { 'attr': {'class': 'btn btn-lime'}}) }}
+			</div>
+		{{ form_end(newsletterForm) }}
+	</div>
+	<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 newsletter_right_text">
+		<div class="img_container text-center">
+			<img src="{{ app.request.schemeAndHttpHost ~ img_path ~ 'components/pdf_download_now.jpg' }}" alt="pdf_download_now">
+		</div>
+		<h3>Latest Newsletter</h3>
+		<a href="#">July 2017 Equipment Sales Bulletin</a>
+		<h3>News Updates</h3>
+		<p>
+			Styers Equipment has partnered with Colordyne Technologies to add a digital solution to your existing flexo press.
+			<a href="#">Click here to download more information</a>
+		</p>
+		<h3>Archived Newsletters</h3>
+		<ul>
+			<li><a href="#">April 2017 Equipment Sales Bulletin</a></li>
+			<li><a href="#">January 2017 Equipment Sales Bulletin </a></li>
+			<li><a href="#">November 2016 Equipment Sales Bulletin</a></li>
+			<li><a href="#">September 2016 Equipment Sales Bulletin</a></li>
+			<li><a href="#">July 2016 Equipment Sales Bulletin</a></li>
+		</ul>
+	</div>
+</div>
+
