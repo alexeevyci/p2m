@@ -1,3 +1,11 @@
+{% for flashMessage in app.session.flashbag.get('success') %}
+	<div class="alert alert-success alert-dismissable">
+		<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+	  	<strong>{{ flashMessage }}</strong>
+	</div>
+    
+
+{% endfor %}
 <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 newsletter_top_text mrg_bottom_20">
 		<p>There are always new things happening in the printing industry and at Styers Equipment Company.  Stay connected by signing up for our newsletter or downloading the latest edition of our equipment sales bulletin.</p>

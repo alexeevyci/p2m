@@ -72,6 +72,14 @@ a, a:hover, a:focus {
     background-color: #88D317;
     border-color: #6E3667;
 }
+.alert-success {
+    color: #6E3667;
+    background-color: #88D317;
+    border-color: #6E3667;
+}
+.alert-success a.close {
+    color: #6E3667;
+}
 
 
 

@@ -134,6 +134,7 @@ class DefaultController extends Controller
                 $newsletter->setEmail($postData['email']);
                 $em->persist($newsletter);
                 $em->flush();
+                $this->addFlash("success", "E-mail was subscribed.");
             }
         }
         //footer form
