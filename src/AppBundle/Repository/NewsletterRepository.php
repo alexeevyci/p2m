@@ -10,4 +10,14 @@ namespace AppBundle\Repository;
  */
 class NewsletterRepository extends \Doctrine\ORM\EntityRepository
 {
+	const SUBMITIONS_LIMIT = 3;
+
+	public function getNumberOfSubmittions($ip) {
+		$query = $this->createQueryBuilder('nw')
+			->select('COUNT(nw.id)')
+			->where("nw.ip = :ip")
+		    ->setParameter('ip', $ip);
+		$result = $query->getQuery()->getSingleScalarResult();
+		return $result;
+	}
 }

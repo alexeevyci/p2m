@@ -7,7 +7,7 @@
     <div class="wrapper container">
         {{ include('@AppBundle/Resources/views/Client/Common/header.html.twig') }}
         {{ include('@AppBundle/Resources/views/Client/Common/menu.html.twig') }}
-        {{ include('@AppBundle/Resources/views/Client/Newsletter/content.html.twig') }}
+        {% include '@AppBundle/Resources/views/Client/Newsletter/content.html.twig' with {'submittionsNr':submittionsNr} %}
         <div id="push"></div>
     </div>
     {{ include('@AppBundle/Resources/views/Client/Common/footer.html.twig') }}

@@ -14,24 +14,28 @@
 <div class="row">
 	<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 newsletter_left_side">
 		<h4 class="title"> <i class="glyphicon glyphicon-envelope"></i>Sign up for our Email Newsletter</h4>
-			{{ form_start(newsletterForm) }}
-			<div class="form-group">
-				{{ form_label(newsletterForm.name) }}
-				{{ form_widget(newsletterForm.name, { 'attr': {'class': 'form-control width_for_recaptcha'}}) }}
-				{{ form_errors(newsletterForm.name) }}
-			</div>
-			<div class="form-group">
-				{{ form_label(newsletterForm.email) }}
-				{{ form_widget(newsletterForm.email, { 'attr': {'class': 'form-control width_for_recaptcha'}}) }}
-				{{ form_errors(newsletterForm.email) }}
-			</div>
-			{#<div class="form-group" id="grecaptcha_wrapper">#}
-				{#<div class="g-recaptcha" data-sitekey="6LcthyoUAAAAADMuvPuy17kfoDB8v3u7BAYA7bd4" data-size="normal"></div>#}
-			{#</div>#}
-			<div class="form-group text-center">
-				{{ form_widget(newsletterForm.subscribe, { 'attr': {'class': 'btn btn-lime'}}) }}
-			</div>
-		{{ form_end(newsletterForm) }}
+			{% if submittionsNr <= 3 %}
+				{{ form_start(newsletterForm) }}
+					<div class="form-group">
+						{{ form_label(newsletterForm.name) }}
+						{{ form_widget(newsletterForm.name, { 'attr': {'class': 'form-control width_for_recaptcha'}}) }}
+						{{ form_errors(newsletterForm.name) }}
+					</div>
+					<div class="form-group">
+						{{ form_label(newsletterForm.email) }}
+						{{ form_widget(newsletterForm.email, { 'attr': {'class': 'form-control width_for_recaptcha'}}) }}
+						{{ form_errors(newsletterForm.email) }}
+					</div>
+					{#<div class="form-group" id="grecaptcha_wrapper">#}
+						{#<div class="g-recaptcha" data-sitekey="6LcthyoUAAAAADMuvPuy17kfoDB8v3u7BAYA7bd4" data-size="normal"></div>#}
+					{#</div>#}
+					<div class="form-group text-center">
+						{{ form_widget(newsletterForm.subscribe, { 'attr': {'class': 'btn btn-lime'}}) }}
+					</div>
+				{{ form_end(newsletterForm) }}
+			{% else %}
+				<p>You have reached the total number of entries. Please contact us if you need to sign up more people. Thank you!</p>
+			{% endif %}
 	</div>
 	<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 newsletter_right_text">
 		<div class="img_container text-center">

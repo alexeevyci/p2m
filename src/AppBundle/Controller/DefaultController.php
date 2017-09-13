@@ -8,7 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Form\ProductsFiltersType;
 use AppBundle\Form\NewsletterType;
-use AppBundle\Form\ContactType;
+use AppBundle\Form\FooterType;
 use GuzzleHttp\Client;
 use Nietonfir\Google\ReCaptcha\ReCaptcha;
 use Nietonfir\Google\ReCaptcha\Api\RequestData;
@@ -123,6 +123,9 @@ class DefaultController extends Controller
 
     public function newsletterAction(Request $request) {
         $em    = $this->get('doctrine.orm.entity_manager');
+        //get number of submittions
+        $ip = $this->container->get('request_stack')->getCurrentRequest()->getClientIp();
+        $submittionsNr = $em->getRepository('AppBundle:Newsletter')->getNumberOfSubmittions($ip);
         //newsletter form
         $newsletterForm = $this->createForm(NewsletterType::class, null);
         $newsletterForm->handleRequest($request);
@@ -130,19 +133,36 @@ class DefaultController extends Controller
             if ($newsletterForm->isValid()) {
                 $postData = $request->request->get('newsletter');
                 $newsletter = new Newsletter();
+                $newsletter->setIp($ip);
                 $newsletter->setName($postData['name']);
                 $newsletter->setEmail($postData['email']);
                 $em->persist($newsletter);
                 $em->flush();
-                $this->addFlash("success", "E-mail was subscribed.");
+                if ($newsletter->getId()) {
+                    $this->addFlash("success", "E-mail was subscribed.");
+                }
             }
         }
         //footer form
-        $footerForm = $this->createForm(NewsletterType::class, null);
+        $footerForm = $this->createForm(FooterType::class, null);
         $footerForm->handleRequest($request);
+        if ($footerForm->isSubmitted()) {
+            if ($footerForm->isValid()) {
+                $postData = $request->request->get('footer');
+                $newsletter = new Newsletter();
+                $newsletter->setName($postData['name']);
+                $newsletter->setEmail($postData['email']);
+                $em->persist($newsletter);
+                $em->flush();
+                if ($newsletter->getId()) {
+                    $this->addFlash("success", "E-mail was subscribed.");
+                }
+            }
+        }
         return $this->render('@AppBundle\Resources\views\Client\Newsletter\index.html.twig', array(
             'footerForm' => $footerForm->createView(),
-            'newsletterForm' => $newsletterForm->createView()
+            'newsletterForm' => $newsletterForm->createView(),
+            'submittionsNr' => $submittionsNr
         ));
     }
 

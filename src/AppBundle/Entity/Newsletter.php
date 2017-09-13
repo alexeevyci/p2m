@@ -24,6 +24,13 @@ class Newsletter
     /**
      * @var string
      *
+     * @ORM\Column(name="ip", type="string", length=255)
+     */
+    private $ip;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="name", type="string", length=255)
      */
     private $name;
@@ -124,5 +131,28 @@ class Newsletter
     {
         return $this->createdAt;
     }
-}
 
+    /**
+     * Set ip
+     *
+     * @param string $ip
+     *
+     * @return Newsletter
+     */
+    public function setIp($ip)
+    {
+        $this->ip = $ip;
+
+        return $this;
+    }
+
+    /**
+     * Get ip
+     *
+     * @return string
+     */
+    public function getIp()
+    {
+        return $this->ip;
+    }
+}
