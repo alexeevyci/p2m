@@ -18,35 +18,40 @@ class ContactType extends AbstractType
 {
 
     public function buildForm(FormBuilderInterface $builder, array $options) {
+        $builder->add('name', TextType::class,array(
+            'mapped'=> false,
+            'label' => 'Name',
+            'required'=>true
+        ));
         $builder->add('company', TextType::class,array(
             'mapped'=> false,
             'label' => 'Company namne',
             'required'=>true
         ));
-        // $builder->add('name', TextType::class,array(
-        //     'mapped'=> false,
-        //     'label' => 'Name',
-        //     'required'=>true
-        // ));
-        $builder->add('telephone', TextType::class,array(
+        $builder->add('city', TextType::class,array(
             'mapped'=> false,
-            'label' => 'Telephone',
+            'label' => 'City',
             'required'=>true
         ));
-        // $builder->add('email', EmailType::class,array(
-        //     'mapped'=> false,
-        //     'label' => 'E-mail',
-        //     'required'=>true
-        // ));
+        $builder->add('contactNumber', TextType::class,array(
+            'mapped'=> false,
+            'label' => 'Contact Number',
+            'required'=>true
+        ));
+         $builder->add('email', EmailType::class,array(
+             'mapped'=> false,
+             'label' => 'Email Address',
+             'required'=>true
+         ));
          $builder->add('country', CountryType::class,array(
             'mapped'=> false,
             'label' => 'Country',
             'required'=>true,
             'placeholder' => 'Choose an option'
         ));
-        $builder->add('message', TextareaType::class,array(
+        $builder->add('comment', TextareaType::class,array(
             'mapped'=> false,
-            'label' => 'Message',
+            'label' => 'Comments',
             'required'=>true
         ));
        

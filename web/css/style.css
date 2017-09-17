@@ -572,11 +572,14 @@ div.newsletter_right_text p {
 div.newsletter_right_text a {
     color: #535353;
 }
-div.newsletter_left_side h4 {
-    color: #1A0315;
-}
 div.newsletter_left_side {
     border: 1px solid #535353
+}
+div.newsletter_left_side h4 {
+color: #1A0315;
+}
+div.newsletter_left_side p {
+    color: #1A0315;
 }
 div.newsletter_left_side i.glyphicon-envelope {
     font-size: medium;
