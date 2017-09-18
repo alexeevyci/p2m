@@ -1,3 +1,27 @@
+{% for flashMessage in app.session.flashbag.get('success') %}
+    <div class="alert alert-success alert-dismissable">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>{{ flashMessage }}</strong>
+    </div>
+{% endfor %}
+<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 contact_top_text mrg_bottom_20">
+        <h4>Buy Used Machinery through MachinePoint</h4>
+        <p>A reliable partner is crucial when you are buying used machinery. MachinePoint has been selling used machinery for over 15 years with an outstanding reputation in making transactions smooth, safe and minimizing risks in the operation. Due to our large international network we are able to find the best machines for sale in the market. We buy and sell machinery, you will be buying directly from MachinePoint making the transactions more secure. We also accept letters of credit and other financial instruments.</p>
+    </div>
+    <div class="hidden-xs hidden-sm col-md-5 col-lg-5 contact_top_image mrg_bottom_20 text-center">
+        <img src="{{ app.request.schemeAndHttpHost ~ img_path ~ 'components/world.jpg' }}" alt="world" />
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 contact_interes_text mrg_bottom_20">
+        <h4>What are you looking for?</h4>
+        <p>A reliable partner is crucial when you are buying used machinery. MachinePoint has been selling used machinery for over 15 years with an outstanding reputation in making transactions smooth, safe and minimizing risks in the operation. Due to our large international network we are able to find the best machines for sale in the market. We buy and sell machinery, you will be buying directly from MachinePoint making the transactions more secure. We also accept letters of credit and other financial instruments.</p>
+    </div>
+    <div class="hidden-xs hidden-sm col-md-5 col-lg-5 contact_interes_image mrg_bottom_20 text-center">
+        <img src="{{ app.request.schemeAndHttpHost ~ img_path ~ 'components/call_us_now.jpg' }}" alt="call us now" />
+    </div>
+</div>
 <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mrg_top_30 contact_form">            
         {{ form_start(contactForm) }}

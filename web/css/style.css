@@ -557,6 +557,10 @@ div#parts_grid div.card div.card-block p.card-text {
 }
 
 /*newsletter*/
+div.newsletter_top_text h4 {
+    padding-left: 20px;
+    color: #1A0315;
+}
 div.newsletter_top_text p {
     color: #1A0315;
     padding-left: 20px;
@@ -586,6 +590,24 @@ div.newsletter_left_side i.glyphicon-envelope {
     margin-right: 5px;
 }
 
+/*contact*/
+div.contact_top_text h4 {
+    color: #1A0315;
+}
+div.contact_top_text p {
+    color: #1A0315;
+    border-bottom: 1px solid #535353;
+}
+div.contact_top_image img{
+    margin-top: 28px;
+    width: 60%;
+}
+div.contact_interes_image img{
+    margin-top: 28px;
+    width: 40%;
+    padding: 2px;
+    border: 1px solid #535353;
+}
 
 
 
