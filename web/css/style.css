@@ -602,6 +602,12 @@ div.contact_top_image img{
     margin-top: 28px;
     width: 60%;
 }
+div.contact_interes_text h4 {
+    color: #1A0315;
+}
+div.contact_interes_text p {
+    color: #1A0315;
+}
 div.contact_interes_image img{
     margin-top: 28px;
     width: 40%;

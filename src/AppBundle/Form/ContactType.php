@@ -2,6 +2,8 @@
 
 namespace AppBundle\Form;
 
+use Doctrine\ORM\EntityManager;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
@@ -13,11 +15,21 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Doctrine\ORM\EntityRepository;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\IsTrue;
-
+use AppBundle\Entity\Categories;
+use AppBundle\Entity\Subcategories;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 class ContactType extends AbstractType
 {
+    protected $em;
+
+    public function __construct(EntityManagerInterface $entityManager)
+    {
+        $this->em = $entityManager;
+    }
 
     public function buildForm(FormBuilderInterface $builder, array $options) {
+        $machineTypeAsArray = $this->getMachineTypeAsArray();
+
         $builder->add('name', TextType::class,array(
             'mapped'=> false,
             'label' => 'Name',
@@ -54,7 +66,26 @@ class ContactType extends AbstractType
             'label' => 'Comments',
             'required'=>true
         ));
-       
+        $builder->add('productCategory', EntityType::class, array(
+            'mapped'=> false,
+            'label' => 'Product Category',
+            'class' => 'AppBundle:Categories'
+        ));
+        $builder->add('machineType', ChoiceType::class, array(
+            'mapped'=> false,
+            'label' => 'Machine Type',
+            'choices' => $machineTypeAsArray
+        ));
+        $builder->add('modelPurpose', TextType::class,array(
+            'mapped'=> false,
+            'label' => 'Model',
+            'required'=>true
+        ));
+        $builder->add('machinePurpose', TextType::class,array(
+            'mapped'=> false,
+            'label' => 'Machine Purpose',
+            'required'=>true
+        ));
         $builder->add('send', SubmitType::class, array(
         	'label' => 'Send',
 		    'attr' => array('class' => 'btn btn-lime'),
@@ -65,6 +96,18 @@ class ContactType extends AbstractType
         $resolver->setDefaults(array(
             'data_class' => 'AppBundle\Entity\Newsletter'
         ));
+    }
+
+    private function getMachineTypeAsArray() {
+        $firstCategory = $this->em->getRepository('AppBundle:Categories')->findOneBy(array());
+        $machineTypeAsArray = array();
+        foreach ($firstCategory->getSubcategories() as $machineType) {
+            /**
+             * @var Subcategories $machineType
+             */
+            $machineTypeAsArray[$machineType->getName()] = $machineType->getId();
+        }
+        return $machineTypeAsArray;
     }
 
 }

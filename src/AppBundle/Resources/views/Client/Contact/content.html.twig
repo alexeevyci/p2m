@@ -13,10 +13,34 @@
         <img src="{{ app.request.schemeAndHttpHost ~ img_path ~ 'components/world.jpg' }}" alt="world" />
     </div>
 </div>
+{{ form_start(contactForm) }}
 <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 contact_interes_text mrg_bottom_20">
         <h4>What are you looking for?</h4>
-        <p>A reliable partner is crucial when you are buying used machinery. MachinePoint has been selling used machinery for over 15 years with an outstanding reputation in making transactions smooth, safe and minimizing risks in the operation. Due to our large international network we are able to find the best machines for sale in the market. We buy and sell machinery, you will be buying directly from MachinePoint making the transactions more secure. We also accept letters of credit and other financial instruments.</p>
+        <div class="form-group">
+            {{ form_label(contactForm.productCategory) }}
+            {{ form_widget(contactForm.productCategory, { 'attr': {'class': 'form-control'}}) }}
+            {{ form_errors(contactForm.productCategory) }}
+        </div>
+        <div class="form-group">
+            {{ form_label(contactForm.machineType) }}
+            {{ form_widget(contactForm.machineType, { 'attr': {'class': 'form-control'}}) }}
+            {{ form_errors(contactForm.machineType) }}
+        </div>
+        <p>
+            Looking for something specific?
+            <button class="btn btn-lime">Tell us more</button>
+        </p>
+        <div class="form-group">
+            {{ form_label(contactForm.modelPurpose) }}
+            {{ form_widget(contactForm.modelPurpose, { 'attr': {'class': 'form-control'}}) }}
+            {{ form_errors(contactForm.modelPurpose) }}
+        </div>
+        <div class="form-group">
+            {{ form_label(contactForm.machinePurpose) }}
+            {{ form_widget(contactForm.machinePurpose, { 'attr': {'class': 'form-control'}}) }}
+            {{ form_errors(contactForm.machinePurpose) }}
+        </div>
     </div>
     <div class="hidden-xs hidden-sm col-md-5 col-lg-5 contact_interes_image mrg_bottom_20 text-center">
         <img src="{{ app.request.schemeAndHttpHost ~ img_path ~ 'components/call_us_now.jpg' }}" alt="call us now" />
@@ -24,7 +48,7 @@
 </div>
 <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mrg_top_30 contact_form">            
-        {{ form_start(contactForm) }}
+
             <div class="row">
                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 bk_color_ddd pdg_bot_10">
                     <h4>ENQUIRY FORM</h4>
@@ -80,25 +104,7 @@
                 <div class="g-recaptcha" data-sitekey="6LcthyoUAAAAADMuvPuy17kfoDB8v3u7BAYA7bd4" data-size="normal"></div>
             </div> -->
             
-        {{ form_end(contactForm) }}
-    </div>
-    <div class="col-xs-12 col-sm-12 col-md-10 col-lg-8 col-md-offset-1 col-lg-offset-2 mrg_top_30">
-        <div id="contact_map"></div>
+
     </div>
 </div>
-<script>
-  function initMap() {
-    var point = {lat: -25.363, lng: 131.044};
-    var map = new google.maps.Map(document.getElementById('contact_map'), {
-      zoom: 6,
-      center: point
-    });
-    var marker = new google.maps.Marker({
-      position: point,
-      map: map
-    });
-  }
-</script>
-<script async defer
-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAe0apUUM54eripUfE3ioVAOxy2GJzZCkU&callback=initMap">
-</script>
+{{ form_end(contactForm) }}

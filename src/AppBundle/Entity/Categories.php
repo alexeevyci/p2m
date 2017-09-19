@@ -55,6 +55,10 @@ class Categories
         $this->subcategories = new ArrayCollection();
     }
 
+    public function __toString() {
+        return $this->name;
+    }
+
     public function preUpdate()
     {
         $this->setUpdatedAt(new \DateTime('now'));

@@ -2,3 +2,8 @@ services:
     used_machines_create_filters:
         class: AppBundle\Services\CreateFiltersService
         arguments: ["@doctrine.orm.entity_manager"]
+    contact_form:
+        class: AppBundle\Form\ContactType
+        arguments: ["@doctrine.orm.entity_manager"]
+        tags:
+            - { name: form.type }
