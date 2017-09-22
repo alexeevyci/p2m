@@ -37,7 +37,7 @@ class ContactType extends AbstractType
         ));
         $builder->add('company', TextType::class,array(
             'mapped'=> false,
-            'label' => 'Company namne',
+            'label' => 'Company',
             'required'=>true
         ));
         $builder->add('city', TextType::class,array(
@@ -69,22 +69,26 @@ class ContactType extends AbstractType
         $builder->add('productCategory', EntityType::class, array(
             'mapped'=> false,
             'label' => 'Product Category',
-            'class' => 'AppBundle:Categories'
+            'class' => 'AppBundle:Categories',
+            'required' => false
         ));
         $builder->add('machineType', ChoiceType::class, array(
             'mapped'=> false,
             'label' => 'Machine Type',
-            'choices' => $machineTypeAsArray
+            'choices' => $machineTypeAsArray,
+            'required' => false
         ));
         $builder->add('modelPurpose', TextType::class,array(
             'mapped'=> false,
             'label' => 'Model',
-            'required'=>true
+            'required'=>true,
+            'required' => false
         ));
         $builder->add('machinePurpose', TextType::class,array(
             'mapped'=> false,
             'label' => 'Machine Purpose',
-            'required'=>true
+            'required'=>true,
+            'required' => false
         ));
         $builder->add('send', SubmitType::class, array(
         	'label' => 'Send',
@@ -101,11 +105,13 @@ class ContactType extends AbstractType
     private function getMachineTypeAsArray() {
         $firstCategory = $this->em->getRepository('AppBundle:Categories')->findOneBy(array());
         $machineTypeAsArray = array();
-        foreach ($firstCategory->getSubcategories() as $machineType) {
-            /**
-             * @var Subcategories $machineType
-             */
-            $machineTypeAsArray[$machineType->getName()] = $machineType->getId();
+        if($firstCategory) {
+            foreach ($firstCategory->getSubcategories() as $machineType) {
+                /**
+                 * @var Subcategories $machineType
+                 */
+                $machineTypeAsArray[$machineType->getName()] = $machineType->getId();
+            }
         }
         return $machineTypeAsArray;
     }

@@ -49,9 +49,6 @@ a, a:hover, a:focus {
 .float_right{
     float: right;
 }
-.bk_color_ddd {
-    background-color: #ddd;
-}
 .btn-lime {
     color: #fff;
     background-color: #88D317;
@@ -516,29 +513,6 @@ div#products_grid div.card div.card-block p.card-text
     text-align: justify; 
 }
 
-/*contact map*/
-div#contact_map {
-    height: 350px;
-    width: 100%;
-}
-
-/*contact form*/
-.contact_form .form-group {
-        margin-bottom: 8px;
-}
-.contact_form label {
-    margin-bottom: 3px;
-} 
-.contact_form .form-control {
-    height: 26px;
-    padding-left: 10px;
-    font-size: 12px;
-}
-
-.contact_form textarea.description_height {
-    height: 140px;
-}
-
 /* spare parts */
 div#parts_grid div.card 
 {
@@ -614,8 +588,9 @@ div.contact_interes_image img{
     padding: 2px;
     border: 1px solid #535353;
 }
-
-
+div.contact_form h4 {
+    color: #1A0315;
+}
 
 
 

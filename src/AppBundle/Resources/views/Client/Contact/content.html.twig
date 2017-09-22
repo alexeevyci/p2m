@@ -29,17 +29,19 @@
         </div>
         <p>
             Looking for something specific?
-            <button class="btn btn-lime">Tell us more</button>
+            <a class="btn btn-lime" data-toggle="collapse" data-target="#extra_preferences">Tell us more</a>
         </p>
-        <div class="form-group">
-            {{ form_label(contactForm.modelPurpose) }}
-            {{ form_widget(contactForm.modelPurpose, { 'attr': {'class': 'form-control'}}) }}
-            {{ form_errors(contactForm.modelPurpose) }}
-        </div>
-        <div class="form-group">
-            {{ form_label(contactForm.machinePurpose) }}
-            {{ form_widget(contactForm.machinePurpose, { 'attr': {'class': 'form-control'}}) }}
-            {{ form_errors(contactForm.machinePurpose) }}
+        <div id="extra_preferences" class="collapse">
+            <div class="form-group">
+                {{ form_label(contactForm.modelPurpose) }}
+                {{ form_widget(contactForm.modelPurpose, { 'attr': {'class': 'form-control'}}) }}
+                {{ form_errors(contactForm.modelPurpose) }}
+            </div>
+            <div class="form-group">
+                {{ form_label(contactForm.machinePurpose) }}
+                {{ form_widget(contactForm.machinePurpose, { 'attr': {'class': 'form-control'}}) }}
+                {{ form_errors(contactForm.machinePurpose) }}
+            </div>
         </div>
     </div>
     <div class="hidden-xs hidden-sm col-md-5 col-lg-5 contact_interes_image mrg_bottom_20 text-center">
@@ -47,64 +49,56 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mrg_top_30 contact_form">            
-
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 bk_color_ddd pdg_bot_10">
-                    <h4>ENQUIRY FORM</h4>
-                    <div class="form-group">
-                        {{ form_label(contactForm.name) }}
-                        {{ form_widget(contactForm.name, { 'attr': {'class': 'form-control'}}) }}
-                        {{ form_errors(contactForm.name) }}
-                    </div>
-                    <div class="form-group">
-                        {{ form_label(contactForm.company) }}
-                        {{ form_widget(contactForm.company, { 'attr': {'class': 'form-control'}}) }}
-                        {{ form_errors(contactForm.company) }}
-                    </div>
-                    <div class="form-group">
-                        {{ form_label(contactForm.city) }}
-                        {{ form_widget(contactForm.city, { 'attr': {'class': 'form-control'}}) }}
-                        {{ form_errors(contactForm.city) }}
-                    </div>
-                    <div class="form-group">
-                        {{ form_label(contactForm.contactNumber) }}
-                        {{ form_widget(contactForm.contactNumber, { 'attr': {'class': 'form-control'}}) }}
-                        {{ form_errors(contactForm.contactNumber) }}
-                    </div>
-                    <div class="form-group">
-                        {{ form_label(contactForm.email) }}
-                        {{ form_widget(contactForm.email, { 'attr': {'class': 'form-control'}}) }}
-                        {{ form_errors(contactForm.email) }}
-                    </div>
-                    <div class="form-group">
-                        {{ form_label(contactForm.country) }}
-                        {{ form_widget(contactForm.country, { 'attr': {'class': 'form-control'}}) }}
-                        {{ form_errors(contactForm.country) }}
-                    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 contact_form"> 
+        <h4>Help us contact you?</h4>           
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                <div class="form-group">
+                    {{ form_label(contactForm.name) }}
+                    {{ form_widget(contactForm.name, { 'attr': {'class': 'form-control'}}) }}
+                    {{ form_errors(contactForm.name) }}
                 </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 bk_color_ddd pdg_bot_10">
-                    <h4 class="invisible">Just for padding</h4>
-                    <div class="form-group">
-                        {{ form_label(contactForm.comment) }}
-                        {{ form_widget(contactForm.comment, { 'attr': {'class': 'form-control description_height'}}) }}
-                        {{ form_errors(contactForm.comment) }}
-                    </div>
+                <div class="form-group">
+                    {{ form_label(contactForm.company) }}
+                    {{ form_widget(contactForm.company, { 'attr': {'class': 'form-control'}}) }}
+                    {{ form_errors(contactForm.company) }}
                 </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 contact_note">
-                    <h4>PLEASE NOTE</h4>
-                    <p class="note">This form is for general enquiries regarding our company, website and for expressing your interest in selling your machines through us.</p><p> If you wish to contact us about purchasing a particular machine then please click the 'contact us about this item' button for that particular machine on the category and product pages.</p><p> Alternatively call us on <strong>+44 (0)1457 766 760</strong></p>
-<!--                     <p class="required">* Required Fields</p> -->
-                    <div class="form-group text-center">
-                        {{ form_widget(contactForm.send, { 'attr': {'class': 'btn btn-lime'}}) }}
-                    </div>
+                <div class="form-group">
+                    {{ form_label(contactForm.city) }}
+                    {{ form_widget(contactForm.city, { 'attr': {'class': 'form-control'}}) }}
+                    {{ form_errors(contactForm.city) }}
                 </div>
             </div>
-            <!-- <div class="form-group" id="grecaptcha_wrapper">
-                <div class="g-recaptcha" data-sitekey="6LcthyoUAAAAADMuvPuy17kfoDB8v3u7BAYA7bd4" data-size="normal"></div>
-            </div> -->
-            
-
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                <div class="form-group">
+                    {{ form_label(contactForm.contactNumber) }}
+                    {{ form_widget(contactForm.contactNumber, { 'attr': {'class': 'form-control'}}) }}
+                    {{ form_errors(contactForm.contactNumber) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(contactForm.email) }}
+                    {{ form_widget(contactForm.email, { 'attr': {'class': 'form-control'}}) }}
+                    {{ form_errors(contactForm.email) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(contactForm.country) }}
+                    {{ form_widget(contactForm.country, { 'attr': {'class': 'form-control'}}) }}
+                    {{ form_errors(contactForm.country) }}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="form-group">
+                    {{ form_label(contactForm.comment) }}
+                    {{ form_widget(contactForm.comment, { 'attr': {'class': 'form-control description_height', 'rows':'6'}}) }}
+                    {{ form_errors(contactForm.comment) }}
+                </div>
+                <div class="form-group text-center">
+                    {{ form_widget(contactForm.send, { 'attr': {'class': 'btn btn-lime'}}) }}
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 {{ form_end(contactForm) }}
